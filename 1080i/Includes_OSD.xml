@@ -1070,6 +1070,9 @@
         <control type="group">
             <include>OSD_Panel</include>
 
+            <include condition="Skin.HasSetting(osd.useleftCodecLogos)">CodecLogosLeftOSD</include>
+            <include condition="Skin.HasSetting(osd.usecenterCodecLogos)">CodecLogosCenterOSD</include>
+            <include condition="Skin.HasSetting(osd.userightCodecLogos)">CodecLogosRightOSD</include>
 
             <!-- Progress Bar Group -->
             <control type="group">
@@ -1117,6 +1120,7 @@
 
             <!-- Top Left Label -->
             <control type="group">
+                <visible>!Skin.HasSetting(osd.useleftCodecLogos)</visible>
                 <include content="Furniture_Top_Left">
                     <param name="id">3099</param>
                     <param name="label">$VAR[Label_OSD_Header]</param>

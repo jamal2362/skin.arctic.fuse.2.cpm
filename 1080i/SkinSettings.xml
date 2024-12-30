@@ -401,6 +401,51 @@
                             <onclick>AlarmClock(refocus1,SetFocus(3,1),00:00,silent)</onclick>
                             <onclick>AlarmClock(refocus2,SetFocus(2019),00:00,silent)</onclick>
                         </include>
+						
+                        <include content="Settings_Label" description="Codec logos">
+                            <param name="id">2363</param>
+                            <label>$LOCALIZE[32063]</label>
+                            <visible>Container(3).HasFocus(2)</visible>
+                        </include>
+                        <include content="Settings_Button">
+                            <param name="id">2368</param>
+                            <param name="control">button</param>
+                            <label>$LOCALIZE[32062]</label>
+                            <visible>Container(3).HasFocus(2)</visible>
+                            <onclick condition="!Skin.HasSetting(osd.useleftCodecStartupLogos) + !Skin.HasSetting(osd.usecenterCodecStartupLogos) + !Skin.HasSetting(osd.userightCodecStartupLogos)">Skin.ToggleSetting(osd.useleftCodecStartupLogos)</onclick>
+                            <onclick condition="Skin.HasSetting(osd.useleftCodecStartupLogos)">Skin.ToggleSetting(osd.usecenterCodecStartupLogos)</onclick>
+                            <onclick condition="Skin.HasSetting(osd.usecenterCodecStartupLogos)">Skin.ToggleSetting(osd.userightCodecStartupLogos)</onclick>
+                            <onclick condition="Skin.HasSetting(osd.useleftCodecStartupLogos)">Skin.Reset(osd.useleftCodecStartupLogos)</onclick>
+                            <onclick condition="Skin.HasSetting(osd.userightCodecStartupLogos)">Skin.Reset(osd.userightCodecStartupLogos)</onclick>
+                            <onclick condition="Skin.HasSetting(osd.usecenterCodecStartupLogos)">Skin.Reset(osd.usecenterCodecStartupLogos)</onclick>
+                            <label2>$VAR[OSDCodecLogosStartupLabel]</label2>
+                        </include>
+                        <include content="Settings_Button">
+                            <param name="id">2367</param>
+                            <param name="control">button</param>
+                            <label>$LOCALIZE[32060]</label>
+                            <visible>Container(3).HasFocus(2)</visible>
+                            <onclick condition="!Skin.HasSetting(osd.useleftCodecLogos) + !Skin.HasSetting(osd.usecenterCodecLogos) + !Skin.HasSetting(osd.userightCodecLogos)">Skin.ToggleSetting(osd.useleftCodecLogos)</onclick>
+                            <onclick condition="Skin.HasSetting(osd.useleftCodecLogos)">Skin.ToggleSetting(osd.usecenterCodecLogos)</onclick>
+                            <onclick condition="Skin.HasSetting(osd.usecenterCodecLogos)">Skin.ToggleSetting(osd.userightCodecLogos)</onclick>
+                            <onclick condition="Skin.HasSetting(osd.useleftCodecLogos)">Skin.Reset(osd.useleftCodecLogos)</onclick>
+                            <onclick condition="Skin.HasSetting(osd.userightCodecLogos)">Skin.Reset(osd.userightCodecLogos)</onclick>
+                            <onclick condition="Skin.HasSetting(osd.usecenterCodecLogos)">Skin.Reset(osd.usecenterCodecLogos)</onclick>
+                            <label2>$VAR[OSDCodecLogosLabel]</label2>
+                        </include>
+                        <include content="Settings_Button">
+                            <param name="id">2362</param>
+                            <param name="control">button</param>
+                            <label>$LOCALIZE[32061]</label>
+                            <visible>Container(3).HasFocus(2)</visible>
+                            <onclick condition="!Skin.HasSetting(ppi.useleftCodecLogos) + !Skin.HasSetting(ppi.usecenterCodecLogos) + !Skin.HasSetting(ppi.userightCodecLogos)">Skin.ToggleSetting(ppi.useleftCodecLogos)</onclick>
+                            <onclick condition="Skin.HasSetting(ppi.useleftCodecLogos)">Skin.ToggleSetting(ppi.usecenterCodecLogos)</onclick>
+                            <onclick condition="Skin.HasSetting(ppi.usecenterCodecLogos)">Skin.ToggleSetting(ppi.userightCodecLogos)</onclick>
+                            <onclick condition="Skin.HasSetting(ppi.useleftCodecLogos)">Skin.Reset(ppi.useleftCodecLogos)</onclick>
+                            <onclick condition="Skin.HasSetting(ppi.userightCodecLogos)">Skin.Reset(ppi.userightCodecLogos)</onclick>
+                            <onclick condition="Skin.HasSetting(ppi.usecenterCodecLogos)">Skin.Reset(ppi.usecenterCodecLogos)</onclick>
+                            <label2>$VAR[PPICodecLogosLabel]</label2>
+                        </include>
 
                         <!-- <include content="Settings_Button" description="Background extra fanart">
                         <param name="dialog">false</param>

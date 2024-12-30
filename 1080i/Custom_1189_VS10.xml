@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window type="dialog" id="1189">
+    <defaultcontrol always="true">8450</defaultcontrol>
+    <controls>
+        <include>Dialog_Dim_Overlay</include>
+		
+        <control type="group">
+            <bottom>40</bottom>
+            <width>520</width>
+            <centertop>50%</centertop>
+            <centerleft>50%</centerleft>
+            <height>600</height>
+            <include>Animation_Down_Delay</include>
+            <include content="Dialog_Foreground_Side">
+                <param name="dialog_size">Dimension_DialogMiniMenu</param>
+                <param name="topline">true</param>
+                <param name="subline">true</param>
+            </include>
+			
+            <!-- Header -->
+            <include content="Dialog_Head">
+                <param name="id">7000</param>
+                <param name="label">$LOCALIZE[32065]</param>
+            </include>
+            <include>Dialog_Head_CloseButton</include>
+			
+            <!-- Content -->
+            <control type="group">
+                <include>Dimension_Dialog_Body</include>
+                <control type="grouplist" id="8450">
+                    <include>Dimension_Dialog_Body_Group</include>
+                    <pagecontrol>61</pagecontrol>
+                    <onright>close</onright>
+                    <onleft>close</onleft>
+                    <include content="Settings_Button">
+                        <param name="id">2343</param>
+                        <param name="control">button</param>
+                        <param name="dialog">true</param>
+                        <label>$LOCALIZE[32064]</label>
+                        <selected>Integer.IsEqual(Player.Process(amlogic.vs10.mode.raw),5) | [[Integer.IsEqual(Player.Process(amlogic.vs10.mode.raw),0) | Integer.IsEqual(Player.Process(amlogic.vs10.mode.raw),1)] + String.Contains(Player.Process(video.hdr.type),Dolby)]</selected>
+                        <onclick>Action(vs10.original)</onclick>
+                        <onclick>Dialog.Close(1189)</onclick>
+                    </include>
+                    <include content="Settings_Button">
+                        <param name="id">2344</param>
+                        <param name="control">button</param>
+                        <param name="dialog">true</param>
+                        <label>VS10 SDR</label>
+                        <selected>Integer.IsEqual(Player.Process(amlogic.vs10.mode.raw),3)</selected>
+                        <onclick>Action(vs10.sdr)</onclick>
+                        <onclick>Dialog.Close(1189)</onclick>
+                    </include>
+                    <include content="Settings_Button">
+                        <param name="id">2345</param>
+                        <param name="control">button</param>
+                        <param name="dialog">true</param>
+                        <label>VS10 HDR10</label>
+                        <visible>[String.Contains(Player.Process(video.hdr.type),SDR) | String.Contains(Player.Process(video.hdr.type),HLG)]</visible>
+                        <selected>Integer.IsEqual(Player.Process(amlogic.vs10.mode.raw),2)</selected>
+                        <onclick>Action(vs10.hdr10)</onclick>
+                        <onclick>Dialog.Close(1189)</onclick>
+                    </include>
+                    <include content="Settings_Button">
+                        <param name="id">2346</param>
+                        <param name="control">button</param>
+                        <param name="dialog">true</param>
+                        <visible>String.Contains(Player.Process(video.hdr.type),SDR) | String.Contains(Player.Process(video.hdr.type),HDR)</visible>
+                        <label>VS10 Dolby Vision</label>
+                        <selected>[Integer.IsEqual(Player.Process(amlogic.vs10.mode.raw),0) | Integer.IsEqual(Player.Process(amlogic.vs10.mode.raw),1)] + !String.Contains(Player.Process(video.hdr.type),Dolby)</selected>
+                        <onclick>Action(vs10.dv)</onclick>
+                        <onclick>Dialog.Close(1189)</onclick>
+                    </include>
+                </control>
+            </control>
+        </control>
+    </controls>
+</window>
