@@ -16,6 +16,10 @@
     <controls>
 
         <control type="group">
+            <include condition="Skin.HasSetting(osd.useleftCodecLogos)">CodecLogosLeftOSD</include>
+            <include condition="Skin.HasSetting(osd.usecenterCodecLogos)">CodecLogosCenterOSD</include>
+            <include condition="Skin.HasSetting(osd.userightCodecLogos)">CodecLogosRightOSD</include>
+
             <include>Animation_OSD_Fullscreen_Change</include>
 
             <control type="group">
@@ -25,6 +29,7 @@
             </control>
 
             <control type="group">
+                <visible>!Skin.HasSetting(osd.useleftCodecLogos)</visible>
                 <include content="Furniture_Top_Left">
                     <param name="id">3099</param>
                     <param name="label">$VAR[Label_OSD_Header]</param>
