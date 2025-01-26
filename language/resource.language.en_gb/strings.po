@@ -2519,6 +2519,31 @@ msgctxt "#31527"
 msgid "Later"
 msgstr ""
 
+#: /1080i/Includes_Weather_Forecast.xml
+msgctxt "#31528"
+msgid "Particulate"
+msgstr ""
+
+#: /1080i/Includes_Weather_Forecast.xml
+msgctxt "#31529"
+msgid "Ozone"
+msgstr ""
+
+#: /1080i/Includes_Weather_Forecast.xml
+msgctxt "#31530"
+msgid "Solar radiation"
+msgstr ""
+
+#: /1080i/Includes_Weather_Forecast.xml
+msgctxt "#31531"
+msgid "Carbon monoxide"
+msgstr ""
+
+#: /1080i/Includes_Weather.xml
+msgctxt "#31532"
+msgid "Charts"
+msgstr ""
+
 #: /1080i/Custom_1115_Dialog_Shortcuts.xml
 msgctxt "#31533"
 msgid "Add list"

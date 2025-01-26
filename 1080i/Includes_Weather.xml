@@ -186,6 +186,15 @@
                             </include>
                             <include content="DialogInfo_Button">
                                 <param name="include_hintlabel">true</param>
+                                <param name="id">9007</param>
+                                <param name="groupid">9107</param>
+                                <param name="label">$LOCALIZE[31532]</param>
+                                <param name="icon">special://skin/extras/icons/chart-simple.png</param>
+                                <param name="visible">!Integer.IsEqual(Container(9207).NumItems,0)</param>
+                                <onclick>Control.Move(9207,5)</onclick>
+                            </include>
+                            <include content="DialogInfo_Button">
+                                <param name="include_hintlabel">true</param>
                                 <param name="id">9005</param>
                                 <param name="groupid">9105</param>
                                 <param name="label">$LOCALIZE[31473]</param>
@@ -611,6 +620,7 @@
             <control type="group">
                 <visible>!Control.HasFocus(9004)</visible>
                 <visible>!Control.HasFocus(9005)</visible>
+                <visible>!Control.HasFocus(9007)</visible>
                 <include content="Dimension_Padding">
                     <param name="pad">40</param>
                 </include>
@@ -645,6 +655,14 @@
                     <param name="pad">40</param>
                 </include>
                 <include>Weather_Radar</include>
+            </control>
+
+            <control type="group">
+                <visible>Control.HasFocus(9007)</visible>
+                <include content="Dimension_Padding">
+                    <param name="pad">40</param>
+                </include>
+                <include>Weather_Graph</include>
             </control>
         </include>
     </include>
