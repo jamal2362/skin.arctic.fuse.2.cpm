@@ -2479,6 +2479,11 @@ msgctxt "#31519"
 msgid "Empty widget placeholder"
 msgstr ""
 
+#: /1080i/Includes_Weather_Radar.xml
+msgctxt "#31520"
+msgid "Cloudiness"
+msgstr ""
+
 #: /1080i/Custom_1115_Dialog_Shortcuts.xml
 msgctxt "#31521"
 msgid "Edit global widgets"
@@ -2497,6 +2502,11 @@ msgstr ""
 #: /1080i/Includes_SkinSettings.xml
 msgctxt "#31524"
 msgid "There is also an overhead refresh cost to performance associated with hiding empty widgets."
+msgstr ""
+
+#: /1080i/Includes_Weather_Radar.xml
+msgctxt "#31525"
+msgid "Visibility"
 msgstr ""
 
 #: /1080i/Custom_1115_Dialog_Shortcuts.xml
