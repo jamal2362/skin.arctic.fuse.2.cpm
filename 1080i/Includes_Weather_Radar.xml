@@ -168,18 +168,8 @@
                     <scrolltime>0</scrolltime>
                     <preloaditems>0</preloaditems>
                     <autoscroll time="800">true</autoscroll>
-                    <itemlayout width="600" height="600">
-                        <control type="image">
-                            <aspectratio scalediffuse="false" align="left" aligny="top">keep</aspectratio>
-                            <texture background="true" diffuse="diffuse/square_w600_h600.png">$INFO[ListItem.Icon]</texture>
-                        </control>
-                    </itemlayout>
-                    <focusedlayout width="600" height="600">
-                        <control type="image">
-                            <aspectratio scalediffuse="false" align="left" aligny="top">keep</aspectratio>
-                            <texture background="true" diffuse="diffuse/square_w600_h600.png">$INFO[ListItem.Icon]</texture>
-                        </control>
-                    </focusedlayout>
+                    <itemlayout width="600" height="600" />
+                    <focusedlayout width="600" height="600" />
                     <content>
                         <include content="Weather_Radar_OpenMeteo_Content_Items">
                             <param name="mapid">1</param>
@@ -209,6 +199,10 @@
                             <param name="mapid">9</param>
                         </include>
                     </content>
+                </control>
+                <control type="image">
+                    <aspectratio scalediffuse="false" align="left" aligny="top">keep</aspectratio>
+                    <texture diffuse="diffuse/square_w600_h600.png" colordiffuse="7fffffff">$INFO[Container(9305).ListItem.Icon]</texture>
                 </control>
             </include>
 
