@@ -18,91 +18,7 @@
     <include name="Weather_Radar_OpenMeteo_Content_Items">
         <include content="Weather_Radar_OpenMeteo_Item">
             <param name="mapid">$PARAM[mapid]</param>
-            <param name="pos">0</param>
-        </include>
-        <include content="Weather_Radar_OpenMeteo_Item">
-            <param name="mapid">$PARAM[mapid]</param>
-            <param name="pos">1</param>
-        </include>
-        <include content="Weather_Radar_OpenMeteo_Item">
-            <param name="mapid">$PARAM[mapid]</param>
-            <param name="pos">2</param>
-        </include>
-        <include content="Weather_Radar_OpenMeteo_Item">
-            <param name="mapid">$PARAM[mapid]</param>
-            <param name="pos">3</param>
-        </include>
-        <include content="Weather_Radar_OpenMeteo_Item">
-            <param name="mapid">$PARAM[mapid]</param>
-            <param name="pos">4</param>
-        </include>
-        <include content="Weather_Radar_OpenMeteo_Item">
-            <param name="mapid">$PARAM[mapid]</param>
-            <param name="pos">5</param>
-        </include>
-        <include content="Weather_Radar_OpenMeteo_Item">
-            <param name="mapid">$PARAM[mapid]</param>
-            <param name="pos">6</param>
-        </include>
-        <include content="Weather_Radar_OpenMeteo_Item">
-            <param name="mapid">$PARAM[mapid]</param>
-            <param name="pos">7</param>
-        </include>
-        <include content="Weather_Radar_OpenMeteo_Item">
-            <param name="mapid">$PARAM[mapid]</param>
-            <param name="pos">8</param>
-        </include>
-        <include content="Weather_Radar_OpenMeteo_Item">
-            <param name="mapid">$PARAM[mapid]</param>
-            <param name="pos">9</param>
-        </include>
-        <include content="Weather_Radar_OpenMeteo_Item">
-            <param name="mapid">$PARAM[mapid]</param>
-            <param name="pos">10</param>
-        </include>
-        <include content="Weather_Radar_OpenMeteo_Item">
-            <param name="mapid">$PARAM[mapid]</param>
-            <param name="pos">11</param>
-        </include>
-        <include content="Weather_Radar_OpenMeteo_Item">
-            <param name="mapid">$PARAM[mapid]</param>
-            <param name="pos">12</param>
-        </include>
-        <include content="Weather_Radar_OpenMeteo_Item">
-            <param name="mapid">$PARAM[mapid]</param>
-            <param name="pos">13</param>
-        </include>
-        <include content="Weather_Radar_OpenMeteo_Item">
-            <param name="mapid">$PARAM[mapid]</param>
-            <param name="pos">14</param>
-        </include>
-        <include content="Weather_Radar_OpenMeteo_Item">
-            <param name="mapid">$PARAM[mapid]</param>
-            <param name="pos">15</param>
-        </include>
-        <include content="Weather_Radar_OpenMeteo_Item">
-            <param name="mapid">$PARAM[mapid]</param>
-            <param name="pos">16</param>
-        </include>
-        <include content="Weather_Radar_OpenMeteo_Item">
-            <param name="mapid">$PARAM[mapid]</param>
-            <param name="pos">17</param>
-        </include>
-        <include content="Weather_Radar_OpenMeteo_Item">
-            <param name="mapid">$PARAM[mapid]</param>
-            <param name="pos">18</param>
-        </include>
-        <include content="Weather_Radar_OpenMeteo_Item">
-            <param name="mapid">$PARAM[mapid]</param>
-            <param name="pos">19</param>
-        </include>
-        <include content="Weather_Radar_OpenMeteo_Item">
-            <param name="mapid">$PARAM[mapid]</param>
-            <param name="pos">20</param>
-        </include>
-        <include content="Weather_Radar_OpenMeteo_Item">
-            <param name="mapid">$PARAM[mapid]</param>
-            <param name="pos">21</param>
+            <param name="pos">23</param>
         </include>
         <include content="Weather_Radar_OpenMeteo_Item">
             <param name="mapid">$PARAM[mapid]</param>
@@ -110,7 +26,91 @@
         </include>
         <include content="Weather_Radar_OpenMeteo_Item">
             <param name="mapid">$PARAM[mapid]</param>
-            <param name="pos">23</param>
+            <param name="pos">21</param>
+        </include>
+        <include content="Weather_Radar_OpenMeteo_Item">
+            <param name="mapid">$PARAM[mapid]</param>
+            <param name="pos">20</param>
+        </include>
+        <include content="Weather_Radar_OpenMeteo_Item">
+            <param name="mapid">$PARAM[mapid]</param>
+            <param name="pos">19</param>
+        </include>
+        <include content="Weather_Radar_OpenMeteo_Item">
+            <param name="mapid">$PARAM[mapid]</param>
+            <param name="pos">18</param>
+        </include>
+        <include content="Weather_Radar_OpenMeteo_Item">
+            <param name="mapid">$PARAM[mapid]</param>
+            <param name="pos">17</param>
+        </include>
+        <include content="Weather_Radar_OpenMeteo_Item">
+            <param name="mapid">$PARAM[mapid]</param>
+            <param name="pos">16</param>
+        </include>
+        <include content="Weather_Radar_OpenMeteo_Item">
+            <param name="mapid">$PARAM[mapid]</param>
+            <param name="pos">15</param>
+        </include>
+        <include content="Weather_Radar_OpenMeteo_Item">
+            <param name="mapid">$PARAM[mapid]</param>
+            <param name="pos">14</param>
+        </include>
+        <include content="Weather_Radar_OpenMeteo_Item">
+            <param name="mapid">$PARAM[mapid]</param>
+            <param name="pos">13</param>
+        </include>
+        <include content="Weather_Radar_OpenMeteo_Item">
+            <param name="mapid">$PARAM[mapid]</param>
+            <param name="pos">12</param>
+        </include>
+        <include content="Weather_Radar_OpenMeteo_Item">
+            <param name="mapid">$PARAM[mapid]</param>
+            <param name="pos">11</param>
+        </include>
+        <include content="Weather_Radar_OpenMeteo_Item">
+            <param name="mapid">$PARAM[mapid]</param>
+            <param name="pos">10</param>
+        </include>
+        <include content="Weather_Radar_OpenMeteo_Item">
+            <param name="mapid">$PARAM[mapid]</param>
+            <param name="pos">9</param>
+        </include>
+        <include content="Weather_Radar_OpenMeteo_Item">
+            <param name="mapid">$PARAM[mapid]</param>
+            <param name="pos">8</param>
+        </include>
+        <include content="Weather_Radar_OpenMeteo_Item">
+            <param name="mapid">$PARAM[mapid]</param>
+            <param name="pos">7</param>
+        </include>
+        <include content="Weather_Radar_OpenMeteo_Item">
+            <param name="mapid">$PARAM[mapid]</param>
+            <param name="pos">6</param>
+        </include>
+        <include content="Weather_Radar_OpenMeteo_Item">
+            <param name="mapid">$PARAM[mapid]</param>
+            <param name="pos">5</param>
+        </include>
+        <include content="Weather_Radar_OpenMeteo_Item">
+            <param name="mapid">$PARAM[mapid]</param>
+            <param name="pos">4</param>
+        </include>
+        <include content="Weather_Radar_OpenMeteo_Item">
+            <param name="mapid">$PARAM[mapid]</param>
+            <param name="pos">3</param>
+        </include>
+        <include content="Weather_Radar_OpenMeteo_Item">
+            <param name="mapid">$PARAM[mapid]</param>
+            <param name="pos">2</param>
+        </include>
+        <include content="Weather_Radar_OpenMeteo_Item">
+            <param name="mapid">$PARAM[mapid]</param>
+            <param name="pos">1</param>
+        </include>
+        <include content="Weather_Radar_OpenMeteo_Item">
+            <param name="mapid">$PARAM[mapid]</param>
+            <param name="pos">0</param>
         </include>
     </include>
 
