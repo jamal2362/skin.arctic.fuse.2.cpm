@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+
+    <include name="Weather_Forecast_Weekly_Item">
+        <item>
+            <label>$INFO[Window(Weather).Property($PARAM[prefix].HighTemp),[B],°[/B]]$INFO[Window(Weather).Property($PARAM[prefix].LowTemp), ,°]</label>
+            <icon>resource://resource.images.weathericons.white/$INFO[Window(weather).Property($PARAM[prefix].FanartCode),,.png]</icon>
+            <property name="Fanart">resource://resource.images.weatherfanart.multi/$INFO[Window(weather).Property($PARAM[prefix].FanartCode)]/</property>
+            <property name="DayName">$INFO[Window(Weather).Property($PARAM[prefix].Title)]</property>
+            <property name="Outlook">$INFO[Window(Weather).Property($PARAM[prefix].Outlook)]</property>
+            <property name="RainChance">$INFO[Window(Weather).Property($PARAM[prefix].ChancePrecipitation)]</property>
+            <property name="HighTemp">$INFO[Window(Weather).Property($PARAM[prefix].HighTemp)]</property>
+            <property name="LowTemp">$INFO[Window(Weather).Property($PARAM[prefix].LowTemp)]</property>
+            <property name="LowTempPrefix">$LOCALIZE[391]: </property>
+            <property name="TempUnit">°</property>
+        </item>
+    </include>
+
+    <include name="Weather_Forecast_Weekly_Items">
+        <include content="Weather_Forecast_Weekly_Item">
+            <param name="prefix">Day1</param>
+        </include>
+        <include content="Weather_Forecast_Weekly_Item">
+            <param name="prefix">Day2</param>
+        </include>
+        <include content="Weather_Forecast_Weekly_Item">
+            <param name="prefix">Day3</param>
+        </include>
+        <include content="Weather_Forecast_Weekly_Item">
+            <param name="prefix">Day4</param>
+        </include>
+        <include content="Weather_Forecast_Weekly_Item">
+            <param name="prefix">Day5</param>
+        </include>
+        <include content="Weather_Forecast_Weekly_Item">
+            <param name="prefix">Day6</param>
+        </include>
+    </include>
+
+    <include name="Weather_Forecast_Daily_Items">
+        <include content="Weather_Forecast_Weekly_Item">
+            <param name="prefix">Daily.2</param>
+        </include>
+        <include content="Weather_Forecast_Weekly_Item">
+            <param name="prefix">Daily.3</param>
+        </include>
+        <include content="Weather_Forecast_Weekly_Item">
+            <param name="prefix">Daily.4</param>
+        </include>
+        <include content="Weather_Forecast_Weekly_Item">
+            <param name="prefix">Daily.5</param>
+        </include>
+        <include content="Weather_Forecast_Weekly_Item">
+            <param name="prefix">Daily.6</param>
+        </include>
+        <include content="Weather_Forecast_Weekly_Item">
+            <param name="prefix">Daily.7</param>
+        </include>
+    </include>
+
+    <include name="Weather_Forecast_Hourly_Item">
+        <item>
+            <label>$INFO[Window(Weather).Property($PARAM[prefix].HighTemp),[B],°[/B]]$INFO[Window(Weather).Property($PARAM[prefix].LowTemp), ,°]</label>
+            <icon>resource://resource.images.weathericons.white/$INFO[Window(weather).Property($PARAM[prefix].FanartCode),,.png]</icon>
+            <property name="Fanart">resource://resource.images.weatherfanart.multi/$INFO[Window(weather).Property($PARAM[prefix].FanartCode)]/</property>
+            <property name="DayName">$INFO[Window(Weather).Property($PARAM[prefix].time)]</property>
+            <property name="Outlook">$INFO[Window(Weather).Property($PARAM[prefix].outlook)]</property>
+            <property name="RainChance">$INFO[Window(Weather).Property($PARAM[prefix].ChancePrecipitation)]</property>
+            <property name="HighTemp">$INFO[Window(Weather).Property($PARAM[prefix].temperature)]</property>
+            <property name="LowTemp">$INFO[Window(Weather).Property($PARAM[prefix].feelslike)]</property>
+            <visible>!String.IsEmpty(Window(weather).Property($PARAM[prefix].outlook))</visible>
+        </item>
+    </include>
+
+    <include name="Weather_Forecast_Hourly_Items">
+        <include content="Weather_Forecast_Hourly_Item">
+            <param name="prefix">Hourly.1</param>
+        </include>
+        <include content="Weather_Forecast_Hourly_Item">
+            <param name="prefix">Hourly.3</param>
+        </include>
+        <include content="Weather_Forecast_Hourly_Item">
+            <param name="prefix">Hourly.5</param>
+        </include>
+        <include content="Weather_Forecast_Hourly_Item">
+            <param name="prefix">Hourly.7</param>
+        </include>
+        <include content="Weather_Forecast_Hourly_Item">
+            <param name="prefix">Hourly.9</param>
+        </include>
+        <include content="Weather_Forecast_Hourly_Item">
+            <param name="prefix">Hourly.11</param>
+        </include>
+    </include>
+
+    <include name="Weather_Forecast_Later_Items">
+        <include content="Weather_Forecast_Hourly_Item">
+            <param name="prefix">Hourly.13</param>
+        </include>
+        <include content="Weather_Forecast_Hourly_Item">
+            <param name="prefix">Hourly.15</param>
+        </include>
+        <include content="Weather_Forecast_Hourly_Item">
+            <param name="prefix">Hourly.17</param>
+        </include>
+        <include content="Weather_Forecast_Hourly_Item">
+            <param name="prefix">Hourly.19</param>
+        </include>
+        <include content="Weather_Forecast_Hourly_Item">
+            <param name="prefix">Hourly.21</param>
+        </include>
+        <include content="Weather_Forecast_Hourly_Item">
+            <param name="prefix">Hourly.23</param>
+        </include>
+    </include>
+
+    <include name="Weather_Forecast">
+        <include content="Object_Hidden_List">
+            <param name="id">9204</param>
+            <content>
+                <item>
+                    <label>$LOCALIZE[20169]</label>
+                    <visible>!String.IsEmpty(Window(weather).Property(daily.2.outlook))</visible>
+                </item>
+                <item>
+                    <label>$LOCALIZE[31526]</label>
+                    <visible>!String.IsEmpty(Window(weather).Property(hourly.1.outlook))</visible>
+                </item>
+                <item>
+                    <label>$LOCALIZE[31527]</label>
+                    <visible>!String.IsEmpty(Window(weather).Property(hourly.23.outlook))</visible>
+                </item>
+            </content>
+        </include>
+        <include content="Weather_Forecast_List">
+            <param name="visible">String.IsEqual(Container(9204).ListItem.Label,$LOCALIZE[20169])</param>
+            <param name="items">Weather_Forecast_Daily_Items</param>
+        </include>
+        <include content="Weather_Forecast_List">
+            <param name="visible">String.IsEqual(Container(9204).ListItem.Label,$LOCALIZE[31526])</param>
+            <param name="items">Weather_Forecast_Hourly_Items</param>
+        </include>
+        <include content="Weather_Forecast_List">
+            <param name="visible">String.IsEqual(Container(9204).ListItem.Label,$LOCALIZE[31527])</param>
+            <param name="items">Weather_Forecast_Later_Items</param>
+        </include>
+    </include>
+
+    <include name="Weather_Forecast_List">
+        <param name="height">133.33</param>
+        <definition>
+            <control type="list">
+                <left>-20</left>
+                <top>-20</top>
+                <right>-20</right>
+                <orientation>vertical</orientation>
+                <itemlayout height="$PARAM[height]">
+                    <include>Weather_Forecast_Itemlayout</include>
+                </itemlayout>
+                <focusedlayout height="$PARAM[height]">
+                    <include>Weather_Forecast_Itemlayout</include>
+                </focusedlayout>
+                <content>
+                    <include>$PARAM[items]</include>
+                </content>
+                <visible>$PARAM[visible]</visible>
+            </control>
+        </definition>
+    </include>
+
+    <include name="Weather_Forecast_Itemlayout">
+        <control type="group">
+            <include content="Dimension_Padding">
+                <param name="pad">20</param>
+            </include>
+            <include content="Dialog_Outline_Box">
+                <control type="label">
+                    <left>100</left>
+                    <right>100</right>
+                    <label>$INFO[ListItem.Property(HighTemp)]$INFO[ListItem.Property(TempUnit)]</label>
+                    <align>right</align>
+                    <aligny>center</aligny>
+                    <font>font_head_bold</font>
+                    <textcolor>dialog_fg_90</textcolor>
+                </control>
+                <control type="label">
+                    <top>10</top>
+                    <left>30</left>
+                    <right>30</right>
+                    <height>45</height>
+                    <label>$INFO[ListItem.Property(DayName)]</label>
+                    <textcolor>dialog_fg_90</textcolor>
+                    <font>font_mini_bold</font>
+                    <aligny>center</aligny>
+                    <align>left</align>
+                </control>
+                <control type="textbox">
+                    <top>12</top>
+                    <bottom>12</bottom>
+                    <left>190</left>
+                    <right>240</right>
+                    <label>$INFO[ListItem.Property(Outlook)]</label>
+                    <textcolor>dialog_fg_90</textcolor>
+                    <font>font_mini</font>
+                    <aligny>center</aligny>
+                    <align>left</align>
+                </control>
+                <control type="image">
+                    <texture background="true" colordiffuse="dialog_fg_90">$INFO[ListItem.Icon]</texture>
+                    <left>30</left>
+                    <right>30</right>
+                    <top>30</top>
+                    <bottom>30</bottom>
+                    <bordersize>-15</bordersize>
+                    <aspectratio align="right">keep</aspectratio>
+                </control>
+                <control type="label">
+                    <bottom>10</bottom>
+                    <height>45</height>
+                    <left>30</left>
+                    <right>30</right>
+                    <label>$INFO[ListItem.Property(LowTempPrefix)]$INFO[ListItem.Property(LowTemp)]$INFO[ListItem.Property(TempUnit)]</label>
+                    <textcolor>dialog_fg_90</textcolor>
+                    <font>font_mini</font>
+                    <aligny>center</aligny>
+                    <align>left</align>
+                </control>
+            </include>
+        </control>
+    </include>
+</includes>

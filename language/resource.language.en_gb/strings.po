@@ -2509,6 +2509,16 @@ msgctxt "#31525"
 msgid "Visibility"
 msgstr ""
 
+#: /1080i/Includes_Weather_Forecast.xml
+msgctxt "#31526"
+msgid "Hour"
+msgstr ""
+
+#: /1080i/Includes_Weather_Forecast.xml
+msgctxt "#31527"
+msgid "Later"
+msgstr ""
+
 #: /1080i/Custom_1115_Dialog_Shortcuts.xml
 msgctxt "#31533"
 msgid "Add list"
