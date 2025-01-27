@@ -40,6 +40,8 @@
         <include condition="String.IsEqual(Window(Home).Property(CustomDialogSettingsItems),Items_Settings_VideoInfoWidgets)">Items_Settings_VideoInfoWidgets</include>
         <include condition="String.IsEqual(Window(Home).Property(CustomDialogSettingsItems),Items_Settings_InfolineAdditionalTags)">Items_Settings_InfolineAdditionalTags</include>
         <include condition="String.IsEqual(Window(Home).Property(CustomDialogSettingsItems),Items_Settings_Viewmodes)">Items_Settings_Viewmodes</include>
+        <include condition="String.IsEqual(Window(Home).Property(CustomDialogSettingsItems),Items_Settings_RatingsMovies)">Items_Settings_RatingsMovies</include>
+        <include condition="String.IsEqual(Window(Home).Property(CustomDialogSettingsItems),Items_Settings_RatingsTVShows)">Items_Settings_RatingsTVShows</include>
     </include>
 
     <include name="Items_Settings_InfolineAdditionalTags">
@@ -267,6 +269,136 @@
             <onclick>Skin.ToggleSetting(VideoInfo.Widgets.DisableOnlineGallery)</onclick>
             <selected>!Skin.HasSetting(VideoInfo.Widgets.DisableOnlineGallery)</selected>
             <visible>!Skin.HasSetting(VideoInfo.Widgets.DisableGallery)</visible>
+        </include>
+    </include>
+
+    <include name="Items_Settings_RatingsMovies">
+        <include content="Settings_Button" description="CustomDialog Ratings">
+            <param name="dialog">true</param>
+            <param name="id">8001</param>
+            <label>$LOCALIZE[563] 01</label>
+            <label2>$INFO[Skin.String(CustomRating.Movies.Item01)]</label2>
+            <onclick>SetProperty(ConfigureRatingItem,Item01,Home)</onclick>
+            <onclick>SetProperty(ConfigureRatingContent,Movies,Home)</onclick>
+            <onclick>ActivateWindow(1119)</onclick>
+        </include>
+
+        <include content="Settings_Button" description="CustomDialog Ratings">
+            <param name="dialog">true</param>
+            <param name="id">8002</param>
+            <label>$LOCALIZE[563] 02</label>
+            <label2>$INFO[Skin.String(CustomRating.Movies.Item02)]</label2>
+            <onclick>SetProperty(ConfigureRatingItem,Item02,Home)</onclick>
+            <onclick>SetProperty(ConfigureRatingContent,Movies,Home)</onclick>
+            <onclick>ActivateWindow(1119)</onclick>
+        </include>
+
+        <include content="Settings_Button" description="CustomDialog Ratings">
+            <param name="dialog">true</param>
+            <param name="id">8003</param>
+            <label>$LOCALIZE[563] 03</label>
+            <label2>$INFO[Skin.String(CustomRating.Movies.Item03)]</label2>
+            <onclick>SetProperty(ConfigureRatingItem,Item03,Home)</onclick>
+            <onclick>SetProperty(ConfigureRatingContent,Movies,Home)</onclick>
+            <onclick>ActivateWindow(1119)</onclick>
+        </include>
+
+        <include content="Settings_Button" description="CustomDialog Ratings">
+            <param name="dialog">true</param>
+            <param name="id">8004</param>
+            <label>$LOCALIZE[563] 04</label>
+            <label2>$INFO[Skin.String(CustomRating.Movies.Item04)]</label2>
+            <visible>!Skin.HasSetting(CustomRating.EnablePremiereStatusDates) | !Skin.HasSetting(CustomRating.Movies.EnablePremiereStatus)</visible>
+            <onclick>SetProperty(ConfigureRatingItem,Item04,Home)</onclick>
+            <onclick>SetProperty(ConfigureRatingContent,Movies,Home)</onclick>
+            <onclick>ActivateWindow(1119)</onclick>
+        </include>
+
+        <include content="Settings_Button" description="CustomDialog Ratings">
+            <param name="dialog">true</param>
+            <param name="id">8005</param>
+            <label>$LOCALIZE[563] 05</label>
+            <label2>$INFO[Skin.String(CustomRating.Movies.Item05)]</label2>
+            <visible>!Skin.HasSetting(CustomRating.Movies.EnablePremiereStatus)</visible>
+            <onclick>SetProperty(ConfigureRatingItem,Item05,Home)</onclick>
+            <onclick>SetProperty(ConfigureRatingContent,Movies,Home)</onclick>
+            <onclick>ActivateWindow(1119)</onclick>
+        </include>
+
+        <include content="Settings_Button" description="CustomDialog Ratings">
+            <param name="dialog">true</param>
+            <param name="id">8006</param>
+            <label>$LOCALIZE[563] 06</label>
+            <label2>$INFO[Skin.String(CustomRating.Movies.Item06)]</label2>
+            <visible>!Skin.HasSetting(CustomRating.Movies.EnablePremiereStatus)</visible>
+            <onclick>SetProperty(ConfigureRatingItem,Item06,Home)</onclick>
+            <onclick>SetProperty(ConfigureRatingContent,Movies,Home)</onclick>
+            <onclick>ActivateWindow(1119)</onclick>
+        </include>
+    </include>
+
+    <include name="Items_Settings_RatingsTVShows">
+        <include content="Settings_Button" description="CustomDialog Ratings">
+            <param name="dialog">true</param>
+            <param name="id">8001</param>
+            <label>$LOCALIZE[563] 01</label>
+            <label2>$INFO[Skin.String(CustomRating.TVShows.Item01)]</label2>
+            <onclick>SetProperty(ConfigureRatingItem,Item01,Home)</onclick>
+            <onclick>SetProperty(ConfigureRatingContent,TVShows,Home)</onclick>
+            <onclick>ActivateWindow(1119)</onclick>
+        </include>
+
+        <include content="Settings_Button" description="CustomDialog Ratings">
+            <param name="dialog">true</param>
+            <param name="id">8002</param>
+            <label>$LOCALIZE[563] 02</label>
+            <label2>$INFO[Skin.String(CustomRating.TVShows.Item02)]</label2>
+            <onclick>SetProperty(ConfigureRatingItem,Item02,Home)</onclick>
+            <onclick>SetProperty(ConfigureRatingContent,TVShows,Home)</onclick>
+            <onclick>ActivateWindow(1119)</onclick>
+        </include>
+
+        <include content="Settings_Button" description="CustomDialog Ratings">
+            <param name="dialog">true</param>
+            <param name="id">8003</param>
+            <label>$LOCALIZE[563] 03</label>
+            <label2>$INFO[Skin.String(CustomRating.TVShows.Item03)]</label2>
+            <onclick>SetProperty(ConfigureRatingItem,Item03,Home)</onclick>
+            <onclick>SetProperty(ConfigureRatingContent,TVShows,Home)</onclick>
+            <onclick>ActivateWindow(1119)</onclick>
+        </include>
+
+        <include content="Settings_Button" description="CustomDialog Ratings">
+            <param name="dialog">true</param>
+            <param name="id">8004</param>
+            <label>$LOCALIZE[563] 04</label>
+            <label2>$INFO[Skin.String(CustomRating.TVShows.Item04)]</label2>
+            <visible>!Skin.HasSetting(CustomRating.EnablePremiereStatusDates) | Skin.HasSetting(CustomRating.TVShows.DisablePremiereStatus)</visible>
+            <onclick>SetProperty(ConfigureRatingItem,Item04,Home)</onclick>
+            <onclick>SetProperty(ConfigureRatingContent,TVShows,Home)</onclick>
+            <onclick>ActivateWindow(1119)</onclick>
+        </include>
+
+        <include content="Settings_Button" description="CustomDialog Ratings">
+            <param name="dialog">true</param>
+            <param name="id">8005</param>
+            <label>$LOCALIZE[563] 05</label>
+            <label2>$INFO[Skin.String(CustomRating.TVShows.Item05)]</label2>
+            <visible>Skin.HasSetting(CustomRating.TVShows.DisablePremiereStatus)</visible>
+            <onclick>SetProperty(ConfigureRatingItem,Item05,Home)</onclick>
+            <onclick>SetProperty(ConfigureRatingContent,TVShows,Home)</onclick>
+            <onclick>ActivateWindow(1119)</onclick>
+        </include>
+
+        <include content="Settings_Button" description="CustomDialog Ratings">
+            <param name="dialog">true</param>
+            <param name="id">8006</param>
+            <label>$LOCALIZE[563] 06</label>
+            <label2>$INFO[Skin.String(CustomRating.TVShows.Item06)]</label2>
+            <visible>Skin.HasSetting(CustomRating.TVShows.DisablePremiereStatus)</visible>
+            <onclick>SetProperty(ConfigureRatingItem,Item06,Home)</onclick>
+            <onclick>SetProperty(ConfigureRatingContent,TVShows,Home)</onclick>
+            <onclick>ActivateWindow(1119)</onclick>
         </include>
     </include>
 

@@ -472,10 +472,12 @@ msgctxt "#31096"
 msgid "Use spotlight"
 msgstr ""
 
-#: /1080i/SkinSettings.xml
+#: /1080i/Includes_SkinSettings.xml
+msgctxt "#31097"
+msgid "Customise ratings"
+msgstr ""
 
-
-#: /1080i/Includes_Items.xml
+#: /1080i/SkinSettings.xml /1080i/Includes_Items.xml
 msgctxt "#31098"
 msgid "Gallery"
 msgstr ""
@@ -2028,10 +2030,7 @@ msgctxt "#31429"
 msgid "Chapters"
 msgstr ""
 
-#: /1080i/SkinSettings.xml
-
-
-#: /1080i/Includes_Views_Row.xml
+#: /1080i/SkinSettings.xml /1080i/Includes_Views_Row.xml
 msgctxt "#31431"
 msgid "Circle"
 msgstr ""
