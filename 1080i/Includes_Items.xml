@@ -477,6 +477,25 @@
             <onclick>SetProperty(ConfigureRatingContent,Movies,Home)</onclick>
             <onclick>ActivateWindow(1119)</onclick>
         </include>
+
+        <include content="Settings_Button" description="Status">
+            <param name="dialog">true</param>
+            <param name="id">8007</param>
+            <param name="control">radiobutton</param>
+            <label>$LOCALIZE[126]</label>
+            <selected>Skin.HasSetting(CustomRating.Movies.EnablePremiereStatus)</selected>
+            <onclick>Skin.ToggleSetting(CustomRating.Movies.EnablePremiereStatus)</onclick>
+        </include>
+
+        <include content="Settings_Button" description="Detailed Status">
+            <param name="dialog">true</param>
+            <param name="id">8008</param>
+            <param name="control">radiobutton</param>
+            <label>$LOCALIZE[31548]</label>
+            <selected>Skin.HasSetting(CustomRating.EnablePremiereStatusDates)</selected>
+            <onclick>Skin.ToggleSetting(CustomRating.EnablePremiereStatusDates)</onclick>
+            <visible>Skin.HasSetting(CustomRating.Movies.EnablePremiereStatus)</visible>
+        </include>
     </include>
 
     <include name="Items_Settings_RatingsTVShows">
@@ -541,6 +560,25 @@
             <onclick>SetProperty(ConfigureRatingItem,Item06,Home)</onclick>
             <onclick>SetProperty(ConfigureRatingContent,TVShows,Home)</onclick>
             <onclick>ActivateWindow(1119)</onclick>
+        </include>
+
+        <include content="Settings_Button" description="TV Show Status">
+            <param name="dialog">true</param>
+            <param name="id">8007</param>
+            <param name="control">radiobutton</param>
+            <label>$LOCALIZE[126]</label>
+            <selected>!Skin.HasSetting(CustomRating.TVShows.DisablePremiereStatus)</selected>
+            <onclick>Skin.ToggleSetting(CustomRating.TVShows.DisablePremiereStatus)</onclick>
+        </include>
+
+        <include content="Settings_Button" description="Detailed Status">
+            <param name="dialog">true</param>
+            <param name="id">8008</param>
+            <param name="control">radiobutton</param>
+            <label>$LOCALIZE[31548]</label>
+            <selected>Skin.HasSetting(CustomRating.EnablePremiereStatusDates)</selected>
+            <onclick>Skin.ToggleSetting(CustomRating.EnablePremiereStatusDates)</onclick>
+            <visible>!Skin.HasSetting(CustomRating.TVShows.DisablePremiereStatus)</visible>
         </include>
     </include>
 

@@ -2619,6 +2619,11 @@ msgctxt "#31547"
 msgid "Yesterday"
 msgstr ""
 
+#: /1080i/Includes_Items.xml
+msgctxt "#31548"
+msgid "Use detailed status"
+msgstr ""
+
 #: /1080i/Custom_1115_Dialog_Shortcuts_Window.xml
 msgctxt "#31551"
 msgid "Use as home"
