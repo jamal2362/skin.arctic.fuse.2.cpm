@@ -482,9 +482,7 @@ msgid "Use spotlight"
 msgstr "استخدم spotlight"
 
 #: /1080i/SkinSettings.xml
-msgctxt "#31097"
-msgid "Customise video info widgets"
-msgstr "widgets تخصيص معلومات لل"
+
 
 #: /1080i/Includes_Items.xml
 msgctxt "#31098"
@@ -1516,9 +1514,7 @@ msgid "Square"
 msgstr "مربع"
 
 #: /1080i/SkinSettings.xml
-msgctxt "#31321"
-msgid "Configure viewtypes"
-msgstr "ضبط طريقة عرض الاقسام"
+
 
 #: /1080i/Includes_Labels.xml
 msgctxt "#31322"
@@ -1684,9 +1680,7 @@ msgid "Seekbar time display"
 msgstr "طريقة عرض الوقت للأفلام"
 
 #: /1080i/SkinSettings.xml
-msgctxt "#31356"
-msgid "Use local cast details"
-msgstr "استخدم معلومات كودي للممثلين"
+
 
 #: /1080i/Includes_Items.xml
 msgctxt "#31357"
@@ -2015,9 +2009,7 @@ msgid "Chapters"
 msgstr "الفصول"
 
 #: /1080i/SkinSettings.xml
-msgctxt "#31430"
-msgid "Customise video OSD widgets"
-msgstr "تخصيص واجهة عرض الفيديو"
+
 
 #: /1080i/Includes_Views_Row.xml
 msgctxt "#31431"

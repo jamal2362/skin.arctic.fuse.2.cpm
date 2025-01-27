@@ -38,7 +38,8 @@
         <include condition="String.IsEqual(Window(Home).Property(CustomDialogSettingsItems),Items_Settings_MPAACountries)">Items_Settings_MPAACountries</include>
         <include condition="String.IsEqual(Window(Home).Property(CustomDialogSettingsItems),Items_Settings_VideoOSDWidgets)">Items_Settings_VideoOSDWidgets</include>
         <include condition="String.IsEqual(Window(Home).Property(CustomDialogSettingsItems),Items_Settings_VideoInfoWidgets)">Items_Settings_VideoInfoWidgets</include>
-        <include condition="String.IsEqual(Window(Home).Property(CustomDialogSettingsItems),Items_Settings_InfolineAdditionalTags)">Items_Settings_InfolineAdditionalTags</include>    
+        <include condition="String.IsEqual(Window(Home).Property(CustomDialogSettingsItems),Items_Settings_InfolineAdditionalTags)">Items_Settings_InfolineAdditionalTags</include>
+        <include condition="String.IsEqual(Window(Home).Property(CustomDialogSettingsItems),Items_Settings_Viewmodes)">Items_Settings_Viewmodes</include>
     </include>
 
     <include name="Items_Settings_InfolineAdditionalTags">
@@ -165,7 +166,7 @@
             <label>$LOCALIZE[31065]</label>
         </include>
         <include content="Settings_Button">
-            <param name="id">8012</param>
+            <param name="id">8004</param>
             <param name="control">radiobutton</param>
             <param name="dialog">true</param>
             <onclick>Skin.ToggleSetting(VideoInfo.Widgets.DisableStarring)</onclick>
@@ -173,7 +174,7 @@
             <label>$LOCALIZE[31076]</label>
         </include>
         <include content="Settings_Button">
-            <param name="id">8006</param>
+            <param name="id">8005</param>
             <param name="control">radiobutton</param>
             <param name="dialog">true</param>
             <onclick>Skin.ToggleSetting(VideoInfo.Widgets.DisableCollection)</onclick>
@@ -181,7 +182,7 @@
             <label>$LOCALIZE[31236]</label>
         </include>
         <include content="Settings_Button">
-            <param name="id">8004</param>
+            <param name="id">8006</param>
             <param name="control">radiobutton</param>
             <param name="dialog">true</param>
             <onclick>Skin.ToggleSetting(VideoInfo.Widgets.DisableStudio)</onclick>
@@ -189,7 +190,7 @@
             <label>$LOCALIZE[572]</label>
         </include>
         <include content="Settings_Button">
-            <param name="id">8005</param>
+            <param name="id">8007</param>
             <param name="control">radiobutton</param>
             <param name="dialog">true</param>
             <onclick>Skin.ToggleSetting(VideoInfo.Widgets.DisableYear)</onclick>
@@ -197,7 +198,7 @@
             <label>$LOCALIZE[345]</label>
         </include>
         <include content="Settings_Button">
-            <param name="id">8011</param>
+            <param name="id">8008</param>
             <param name="control">radiobutton</param>
             <param name="dialog">true</param>
             <onclick>Skin.ToggleSetting(VideoInfo.Widgets.DisableCrew)</onclick>
@@ -205,7 +206,7 @@
             <label>$LOCALIZE[31050]</label>
         </include>
         <include content="Settings_Button">
-            <param name="id">8007</param>
+            <param name="id">8009</param>
             <param name="control">radiobutton</param>
             <param name="dialog">true</param>
             <onclick>Skin.ToggleSetting(VideoInfo.Widgets.DisableVideos)</onclick>
@@ -213,7 +214,7 @@
             <label>$LOCALIZE[10025]</label>
         </include>
         <include content="Settings_Button">
-            <param name="id">8008</param>
+            <param name="id">8010</param>
             <param name="control">radiobutton</param>
             <param name="dialog">true</param>
             <onclick>Skin.ToggleSetting(VideoInfo.Widgets.DisableComments)</onclick>
@@ -221,7 +222,7 @@
             <label>$LOCALIZE[31334]</label>
         </include>
         <include content="Settings_Button">
-            <param name="id">8009</param>
+            <param name="id">8011</param>
             <param name="control">radiobutton</param>
             <param name="dialog">true</param>
             <onclick>Skin.ToggleSetting(VideoInfo.Widgets.DisableRecommendations)</onclick>
@@ -229,12 +230,43 @@
             <label>$LOCALIZE[31018]</label>
         </include>
         <include content="Settings_Button">
-            <param name="id">8010</param>
+            <param name="id">8012</param>
             <param name="control">radiobutton</param>
             <param name="dialog">true</param>
             <onclick>Skin.ToggleSetting(VideoInfo.Widgets.DisableGallery)</onclick>
             <selected>!Skin.HasSetting(VideoInfo.Widgets.DisableGallery)</selected>
             <label>$LOCALIZE[31098]</label>
+        </include>
+        <include content="Settings_Label">
+            <param name="id">8013</param>
+            <param name="dialog">true</param>
+            <label>$LOCALIZE[33063]</label>
+        </include>
+        <include content="Settings_Button">
+            <param name="id">8014</param>
+            <param name="control">radiobutton</param>
+            <param name="dialog">true</param>
+            <label>$LOCALIZE[31356]</label>
+            <onclick>Skin.ToggleSetting(Info.UseLocalCast)</onclick>
+            <selected>!Skin.HasSetting(Info.UseLocalCast)</selected>
+        </include>
+        <include content="Settings_Button">
+            <param name="id">8015</param>
+            <param name="control">radiobutton</param>
+            <param name="dialog">true</param>
+            <label>$LOCALIZE[31540]</label>
+            <onclick>Skin.ToggleSetting(VideoInfo.Widgets.EnableLocalCollection)</onclick>
+            <selected>!Skin.HasSetting(VideoInfo.Widgets.EnableLocalCollection)</selected>
+            <visible>!Skin.HasSetting(VideoInfo.Widgets.DisableCollection)</visible>
+        </include>
+        <include content="Settings_Button">
+            <param name="id">8016</param>
+            <param name="control">radiobutton</param>
+            <param name="dialog">true</param>
+            <label>$LOCALIZE[31539]</label>
+            <onclick>Skin.ToggleSetting(VideoInfo.Widgets.DisableOnlineGallery)</onclick>
+            <selected>!Skin.HasSetting(VideoInfo.Widgets.DisableOnlineGallery)</selected>
+            <visible>!Skin.HasSetting(VideoInfo.Widgets.DisableGallery)</visible>
         </include>
     </include>
 
@@ -1783,6 +1815,54 @@
             <selected>!String.StartsWith(Skin.String(Background.Image),special://skin/extras/backgrounds/blur/) + !String.IsEmpty(Skin.String(Background.Image))</selected>
             <onclick>Skin.SetImage(Background.Image)</onclick>
             <onclick>RunScript(plugin.video.themoviedb.helper,blur_image=$VAR[Image_SimpleBackground],prefix=SimpleBackground)</onclick>
+        </include>
+    </include>
+
+    <include name="Items_Settings_Viewmodes">
+        <include content="Settings_Button" description="Switch Wall Orientation">
+            <param name="id">8001</param>
+            <param name="control">button</param>
+            <param name="dialog">true</param>
+            <label>$LOCALIZE[31082]</label>
+            <label2>$VAR[Label_Settings_WallOrientation]</label2>
+            <visible>String.IsEqual(Skin.AspectRatio,16:9)</visible>
+            <onclick>Skin.ToggleSetting(View.SwitchWallOrientation)</onclick>
+        </include>
+
+        <include content="Settings_Button" description="Use Text based Card for Library">
+            <param name="id">8002</param>
+            <param name="control">button</param>
+            <param name="dialog">true</param>
+            <label>$LOCALIZE[31423]</label>
+            <label2>$VAR[Label_Settings_CardViewMode]</label2>
+            <onclick>Skin.ToggleSetting(View.UseTextBasedCard)</onclick>
+        </include>
+
+        <include content="Settings_Button" description="Use Text based Board for Library">
+            <param name="id">8003</param>
+            <param name="control">button</param>
+            <param name="dialog">true</param>
+            <label>$LOCALIZE[31424]</label>
+            <label2>$VAR[Label_Settings_BoardViewMode]</label2>
+            <onclick>Skin.ToggleSetting(View.UseTextBasedBoard)</onclick>
+        </include>
+
+        <include content="Settings_Button" description="Use Landscape only for FlixArt List Library">
+            <param name="id">8004</param>
+            <param name="control">button</param>
+            <param name="dialog">true</param>
+            <label>$LOCALIZE[31480]</label>
+            <label2>$VAR[Label_Settings_ListFlixArtViewMode]</label2>
+            <onclick>Skin.ToggleSetting(View.DisableFlixArtListPoster)</onclick>
+        </include>
+
+        <include content="Settings_Button" description="Use Simple Text">
+            <param name="id">8005</param>
+            <param name="control">button</param>
+            <param name="dialog">true</param>
+            <label>$LOCALIZE[31292]</label>
+            <label2>$VAR[Label_Settings_TextViewMode]</label2>
+            <onclick>Skin.ToggleSetting(View.UseDetailedListLabels)</onclick>
         </include>
     </include>
 

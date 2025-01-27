@@ -726,11 +726,6 @@
                     <visible>!String.IsEmpty(ListItem.Art(fanart))</visible>
                 </item>
                 <item>
-                    <icon>$INFO[Window(Home).Property(TMDbHelper.ListItem.Fanart)]</icon>
-                    <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Fanart))</visible>
-                    <visible>!String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.Fanart),ListItem.Art(fanart))</visible>
-                </item>
-                <item>
                     <icon>$INFO[ListItem.Art(fanart1)]</icon>
                     <visible>!String.IsEmpty(ListItem.Art(fanart1))</visible>
                     <visible>!String.IsEqual(ListItem.Art(fanart1),ListItem.Art(fanart))</visible>
@@ -863,10 +858,8 @@
                     <visible>!String.IsEmpty(ListItem.Art(artist.landscape))</visible>
                 </item>
             </content>
-            <include condition="Window.IsVisible(DialogVideoInfo.xml) + !String.IsEqual(ListItem.Property(tmdb_type),person)">DialogInfo_VideoFanartContent</include>
-            <include condition="Window.IsVisible(DialogVideoInfo.xml) + String.IsEqual(ListItem.Property(tmdb_type),person)">DialogInfo_PersonImageContent</include>
-
-
+            <include condition="Window.IsVisible(DialogVideoInfo.xml) + !Skin.HasSetting(VideoInfo.Widgets.DisableOnlineGallery) + !String.IsEqual(ListItem.Property(tmdb_type),person)">DialogInfo_VideoFanartContent</include>
+            <include condition="Window.IsVisible(DialogVideoInfo.xml) + !Skin.HasSetting(VideoInfo.Widgets.DisableOnlineGallery) + String.IsEqual(ListItem.Property(tmdb_type),person)">DialogInfo_PersonImageContent</include>
         </include>
     </include>
 
