@@ -42,6 +42,148 @@
         <include condition="String.IsEqual(Window(Home).Property(CustomDialogSettingsItems),Items_Settings_Viewmodes)">Items_Settings_Viewmodes</include>
         <include condition="String.IsEqual(Window(Home).Property(CustomDialogSettingsItems),Items_Settings_RatingsMovies)">Items_Settings_RatingsMovies</include>
         <include condition="String.IsEqual(Window(Home).Property(CustomDialogSettingsItems),Items_Settings_RatingsTVShows)">Items_Settings_RatingsTVShows</include>
+        <include condition="String.IsEqual(Window(Home).Property(CustomDialogSettingsItems),Items_Settings_HomeMenuStyle)">Items_Settings_HomeMenuStyle</include>
+        <include condition="String.IsEqual(Window(Home).Property(CustomDialogSettingsItems),Items_Settings_HubCategoriesStyle)">Items_Settings_HubCategoriesStyle</include>
+        <include condition="String.IsEqual(Window(Home).Property(CustomDialogSettingsItems),Items_Settings_WidgetStyle)">Items_Settings_WidgetStyle</include>
+    </include>
+
+    <include name="Items_Settings_WidgetStyle">
+        <include content="Settings_Button" description="Blur background">
+            <param name="dialog">true</param>
+            <param name="id">8001</param>
+            <param name="control">button</param>
+            <label>$LOCALIZE[31466]</label>
+            <label2>$VAR[Label_Settings_WidgetBlurBackground]</label2>
+            <onclick>Skin.ToggleSetting(Widgets.DontHideArtworkOnClassic)</onclick>
+        </include>
+        <include content="Settings_Button" description="No Items Placeholder">
+            <param name="dialog">true</param>
+            <param name="id">8002</param>
+            <param name="control">button</param>
+            <label>$LOCALIZE[31519]</label>
+            <label2>$VAR[Label_Settings_WidgetNoResults]</label2>
+            <onclick condition="Skin.HasSetting(Widgets.DisableNoResultsItem)">Skin.Reset(Widgets.DisableNoResultsItem)</onclick>
+            <onclick condition="!Skin.HasSetting(Widgets.DisableNoResultsItem)">RunScript(script.skinvariables,run_dialog=yesno,"heading=$LOCALIZE[31519]","message=[B][COLOR=red][UPPERCASE]$LOCALIZE[14117][/UPPERCASE][/B][/COLOR] - $LOCALIZE[31522] $LOCALIZE[31524] $LOCALIZE[31523]",yeslabel=$LOCALIZE[31162],nolabel=$LOCALIZE[222],defaultbutton=10,"executebuiltin=Skin.SetBool(Widgets.DisableNoResultsItem)")</onclick>
+        </include>
+        <include content="Settings_Button" description="Show More Items">
+            <param name="dialog">true</param>
+            <param name="id">8003</param>
+            <param name="control">radiobutton</param>
+            <label>$LOCALIZE[31091]</label>
+            <onclick>Skin.ToggleSetting(Widgets.DisableShowMore)</onclick>
+            <selected>!Skin.HasSetting(Widgets.DisableShowMore)</selected>
+        </include>
+        <include content="Settings_Button" description="Home Scroll Between">
+            <param name="dialog">true</param>
+            <param name="id">8008</param>
+            <param name="control">radiobutton</param>
+            <label>$LOCALIZE[31253]</label>
+            <onclick>Skin.ToggleSetting(Hub.Home.DisableMoveBetweenGroups)</onclick>
+            <selected>!Skin.HasSetting(Hub.Home.DisableMoveBetweenGroups)</selected>
+            <visible>String.IsEmpty(Skin.String(Hub.Home.ReplaceWindow))</visible>
+            <visible>Skin.HasSetting(Hub.Home.DisableSubmenu)</visible>
+        </include>
+    </include>
+
+    <include name="Items_Settings_HubCategoriesStyle">
+        <include content="Settings_Button" description="Categories Icon">
+            <param name="dialog">true</param>
+            <param name="id">8001</param>
+            <param name="control">button</param>
+            <label>$LOCALIZE[736]</label>
+            <label2>$VAR[Label_Setting_HubsMenuStyle]</label2>
+            <onclick>Skin.ToggleSetting(Hubs.DisableTextCategories)</onclick>
+        </include>
+        <include content="Settings_Button" description="Spotlight button">
+            <param name="dialog">true</param>
+            <param name="id">8002</param>
+            <param name="control">button</param>
+            <label>$LOCALIZE[31105] [LOWERCASE]$LOCALIZE[31416][/LOWERCASE]</label>
+            <label2>$VAR[Label_Setting_Spotlight_UseMenuButton]</label2>
+            <onclick>Skin.ToggleSetting(Spotlight.UseMenuButton)</onclick>
+        </include>
+    </include>
+
+    <include name="Items_Settings_HomeMenuStyle">
+        <include content="Settings_Button" description="Expanded">
+            <param name="dialog">true</param>
+            <param name="id">8001</param>
+            <label>$LOCALIZE[736]</label>
+            <label2>$VAR[Label_Setting_SideMenuStyle]</label2>
+            <onclick>Skin.ToggleSetting(Home.ExpandedMenu)</onclick>
+            <visible>String.IsEmpty(Skin.String(Hub.Home.ReplaceWindow))</visible>
+            <visible>Skin.HasSetting(Hub.Home.DisableSubmenu)</visible>
+        </include>
+
+        <include content="Settings_Button" description="Left menu">
+            <param name="dialog">true</param>
+            <param name="id">8002</param>
+            <label>$LOCALIZE[15217] ($LOCALIZE[39162] / $LOCALIZE[31349])</label>
+            <label2>$VAR[Label_Setting_LeftMenuStyle]</label2>
+            <onclick>RunScript(script.skinvariables,run_dialog=select,preselect=$VAR[Label_Setting_LeftMenuStyle],heading=$LOCALIZE[39162],separator=||,list=$LOCALIZE[31446]||$LOCALIZE[33061]||$LOCALIZE[1036]||$LOCALIZE[33063],"executebuiltin_0=Skin.SetString(Home.LeftMenu.Action,Bump)","executebuiltin_1=Skin.Reset(Home.LeftMenu.Action)","executebuiltin_2=Skin.SetString(Home.LeftMenu.Action,Favourites)","executebuiltin_3=Skin.SetString(Home.LeftMenu.Action,Options)")</onclick>
+        </include>
+
+        <include content="Settings_Button" description="Back menu">
+            <param name="dialog">true</param>
+            <param name="id">8003</param>
+            <label>$LOCALIZE[15217] ($LOCALIZE[31166])</label>
+            <label2>$VAR[Label_Setting_Home_OnBack]</label2>
+            <onclick condition="Skin.HasSetting(Home.DisableMenuOnBack)">Skin.Reset(Home.DisableMenuOnBack)</onclick>
+            <onclick condition="!Skin.HasSetting(Home.DisableMenuOnBack)">RunScript(script.skinvariables,run_dialog=yesno,heading=$LOCALIZE[31166],message=[B][COLOR=red][UPPERCASE]$LOCALIZE[14117][/UPPERCASE][/B][/COLOR][CR]$LOCALIZE[31277],yeslabel=$LOCALIZE[24021],nolabel=$LOCALIZE[222],"executebuiltin=Skin.SetBool(Home.DisableMenuOnBack)")</onclick>
+        </include>
+
+        <include content="Settings_Button" description="Sidemenu default focus">
+            <param name="dialog">true</param>
+            <param name="id">8004</param>
+            <label>$LOCALIZE[31144]</label>
+            <label2>$VAR[Label_Setting_Home_FirstFocus]</label2>
+            <onclick condition="Skin.HasSetting(SideMenu.FocusWidgetsFirst)">Skin.Reset(SideMenu.FocusWidgetsFirst)</onclick>
+            <onclick condition="!Skin.HasSetting(SideMenu.FocusWidgetsFirst)">RunScript(script.skinvariables,run_dialog=yesno,heading=$LOCALIZE[31176],message=[B][COLOR=red][UPPERCASE]$LOCALIZE[14117][/UPPERCASE][/B][/COLOR][CR]$LOCALIZE[31276] $LOCALIZE[31277],yeslabel=$LOCALIZE[31103],nolabel=$LOCALIZE[31150],"executebuiltin=Skin.SetBool(SideMenu.FocusWidgetsFirst)")</onclick>
+            <visible>String.IsEmpty(Skin.String(Hub.Home.ReplaceWindow))</visible>
+            <visible>Skin.HasSetting(Hub.Home.DisableSubmenu)</visible>
+        </include>
+
+        <include content="Settings_Button" description="Search And Options">
+            <param name="dialog">true</param>
+            <param name="id">8005</param>
+            <label>$LOCALIZE[31151]</label>
+            <label2>$VAR[Label_Setting_SearchStyle]</label2>
+
+            <!-- Disabled (switch to Home) -->
+            <onclick condition="Skin.HasSetting(SideMenu.DisableSearchAndOptions)">Skin.Reset(SideMenu.DisableSearchAndOptions)</onclick>
+            <onclick condition="Skin.HasSetting(SideMenu.DisableSearchAndOptions)">Skin.Reset(HubsMenu.EnableSearchAndOptions)</onclick>
+
+            <!-- Home (switch to Hubs+Home) -->
+            <onclick condition="!Skin.HasSetting(SideMenu.DisableSearchAndOptions) + !Skin.HasSetting(HubsMenu.EnableSearchAndOptions)">Skin.Reset(SideMenu.DisableSearchAndOptions)</onclick>
+            <onclick condition="!Skin.HasSetting(SideMenu.DisableSearchAndOptions) + !Skin.HasSetting(HubsMenu.EnableSearchAndOptions)">Skin.SetBool(HubsMenu.EnableSearchAndOptions)</onclick>
+
+            <!-- Hubs+Home (switch to Disabled on warning otherwise switch back to Home only) -->
+            <onclick condition="Skin.HasSetting(HubsMenu.EnableSearchAndOptions)">Skin.Reset(SideMenu.DisableSearchAndOptions)</onclick>
+            <onclick condition="Skin.HasSetting(HubsMenu.EnableSearchAndOptions)">Skin.Reset(HubsMenu.EnableSearchAndOptions)</onclick>
+            <onclick condition="Skin.HasSetting(HubsMenu.EnableSearchAndOptions)">RunScript(script.skinvariables,run_dialog=yesno,heading=$LOCALIZE[31151],message=[B][COLOR=red][UPPERCASE]$LOCALIZE[14117][/UPPERCASE][/B][/COLOR][CR]$LOCALIZE[31277],yeslabel=$LOCALIZE[24021],nolabel=$LOCALIZE[222],"executebuiltin=Skin.SetBool(SideMenu.DisableSearchAndOptions)||Skin.Reset(HubsMenu.EnableSearchAndOptions)")</onclick>
+
+            <selected>!Skin.HasSetting(SideMenu.DisableSearchAndOptions)</selected>
+        </include>
+        <include content="Settings_Button" description="Replace search with discover">
+            <param name="dialog">true</param>
+            <param name="id">8006</param>
+            <param name="control">radiobutton</param>
+            <label>$LOCALIZE[31445]</label>
+            <onclick>Skin.ToggleSetting(SideMenu.SwapSearchForDiscover)</onclick>
+            <selected>Skin.HasSetting(SideMenu.SwapSearchForDiscover)</selected>
+            <visible>!Skin.HasSetting(SideMenu.DisableSearchAndOptions)</visible>
+        </include>
+        <include content="Settings_Button" description="Profile">
+            <param name="dialog">true</param>
+            <param name="id">8007</param>
+            <param name="control">radiobutton</param>
+            <label>$LOCALIZE[31146]</label>
+            <onclick>Skin.ToggleSetting(SideMenu.DisableProfileLogo)</onclick>
+            <selected>!Skin.HasSetting(SideMenu.DisableProfileLogo)</selected>
+            <visible>![Skin.HasSetting(SideMenu.DisableSearchAndOptions) + $EXP[Exp_HomeMenu_IsExpanded]]</visible>
+            <visible>String.IsEmpty(Skin.String(Hub.Home.ReplaceWindow))</visible>
+            <visible>Skin.HasSetting(Hub.Home.DisableSubmenu)</visible>
+        </include>
     </include>
 
     <include name="Items_Settings_InfolineAdditionalTags">
@@ -518,10 +660,10 @@
             <onclick condition="Skin.String(OptionsTiles.Layout,$NUMBER[4])">Skin.SetString(OptionsTiles.Layout,$NUMBER[2])</onclick>
         </include>
 
-        <include content="Settings_Divider_Label">
+        <include content="Settings_Label">
             <param name="id">8003</param>
             <param name="color">dialog_fg</param>
-            <param name="label">$LOCALIZE[31467]</param>
+            <label>$LOCALIZE[31467]</label>
         </include>
 
         <include content="Items_Settings_PowerMenuConfigure_Tiles">
@@ -544,10 +686,10 @@
             <param name="visible">Integer.IsGreater(Skin.String(OptionsTiles.Layout),3)</param>
         </include>
 
-        <include content="Settings_Divider_Label">
+        <include content="Settings_Label">
             <param name="id">8005</param>
             <param name="color">dialog_fg</param>
-            <param name="label">$LOCALIZE[111]</param>
+            <label>$LOCALIZE[111]</label>
         </include>
         <include content="Settings_Button">
             <param name="id">8001</param>
@@ -556,16 +698,16 @@
             <onclick>SetProperty(Shortcuts.EditMenu,menu=powermainmenu,Home)</onclick>
             <onclick>ClearProperty(Shortcuts.EditMode,Home)</onclick>
             <onclick>ClearProperty(Shortcuts.EditGUID,Home)</onclick>
-            <onclick>Close</onclick>
+            <!-- <onclick>Close</onclick> -->
             <onclick>ActivateWindow(1116)</onclick>
             <label>$LOCALIZE[31363]</label>
         </include>
 
-        <include content="Settings_Divider_Label">
+        <!-- <include content="Settings_Label">
             <param name="id">8007</param>
             <param name="color">dialog_fg</param>
-            <param name="label">$LOCALIZE[31372]</param>
-        </include>
+            <label>$LOCALIZE[31372]</label>
+        </include> -->
         <include content="Settings_Button">
             <param name="id">8002</param>
             <param name="control">button</param>
@@ -573,7 +715,7 @@
             <onclick>SetProperty(Shortcuts.EditMenu,menu=options-tray,Home)</onclick>
             <onclick>ClearProperty(Shortcuts.EditMode,Home)</onclick>
             <onclick>ClearProperty(Shortcuts.EditGUID,Home)</onclick>
-            <onclick>Close</onclick>
+            <!-- <onclick>Close</onclick> -->
             <onclick>ActivateWindow(1116)</onclick>
             <label>$LOCALIZE[31372]</label>
         </include>
