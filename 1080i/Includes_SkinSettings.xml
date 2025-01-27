@@ -829,7 +829,7 @@
             <param name="baseid">$PARAM[baseid]</param>
             <param name="id">026</param>
             <param name="control">radiobutton</param>
-            <label>PVR > $LOCALIZE[31435]</label>
+            <label>PVR $LOCALIZE[31435]</label>
             <onclick>Skin.ToggleSetting(TMDbHelper.DisablePVR)</onclick>
             <selected>!Skin.HasSetting(TMDbHelper.DisablePVR)</selected>
         </include>
