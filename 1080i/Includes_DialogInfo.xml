@@ -1456,7 +1456,7 @@
 
                     <!-- Studio -->
                     <include content="Object_InfoCircle">
-                        <param name="name">$VAR[Label_FromStudio]</param>
+                        <param name="name">$VAR[Label_Studio]</param>
                         <param name="role">$LOCALIZE[572]</param>
                         <!-- <param name="icon">special://skin/extras/icons/director.png</param> -->
                         <include content="Object_InfoCircle_Image">
