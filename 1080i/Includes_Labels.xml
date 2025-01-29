@@ -463,8 +463,9 @@
     </variable>
 
     <variable name="Label_Setting_OptionalInfoLine">
-        <value condition="Skin.HasSetting(InfoLine.EndTime)">$LOCALIZE[31192]</value>
-        <value>$LOCALIZE[515]</value>
+        <value condition="Skin.String(InfoLine.Optional,Ends)">$LOCALIZE[31192]</value>
+        <value condition="Skin.String(InfoLine.Optional,Genre)">$LOCALIZE[515]</value>
+        <value>$LOCALIZE[231]</value>
     </variable>
 
     <variable name="Label_Setting_AdditionalTags">       
