@@ -204,8 +204,16 @@
             <selected>!Skin.HasSetting(Infoline.DisableHDR)</selected>
             <label>HDR</label>
         </include>
-        <include content="Settings_Button" description="Audio Channels">
+        <include content="Settings_Button" description="Audio Codec">
             <param name="id">8003</param>
+            <param name="control">radiobutton</param>
+            <param name="dialog">true</param>
+            <onclick>Skin.ToggleSetting(Infoline.DisableAudioCodec)</onclick>
+            <selected>!Skin.HasSetting(Infoline.DisableAudioCodec)</selected>
+            <label>$LOCALIZE[31549]</label>
+        </include>
+        <include content="Settings_Button" description="Audio Channels">
+            <param name="id">8004</param>
             <param name="control">radiobutton</param>
             <param name="dialog">true</param>
             <onclick>Skin.ToggleSetting(Infoline.DisableAudioChannels)</onclick>
@@ -213,7 +221,7 @@
             <label>$LOCALIZE[21444]</label>
         </include>
         <include content="Settings_Button" description="Version">
-            <param name="id">8004</param>
+            <param name="id">8005</param>
             <param name="control">radiobutton</param>
             <param name="dialog">true</param>
             <onclick>Skin.ToggleSetting(Infoline.DisableVersion)</onclick>
@@ -221,7 +229,7 @@
             <label>$LOCALIZE[40013]</label>
         </include>
         <include content="Settings_Button" description="Collection">
-            <param name="id">8005</param>
+            <param name="id">8006</param>
             <param name="control">radiobutton</param>
             <param name="dialog">true</param>
             <onclick>Skin.ToggleSetting(Infoline.DisableCollection)</onclick>
@@ -229,11 +237,12 @@
             <label>$LOCALIZE[31108]</label>
         </include>
         <include content="Settings_Button" description="None">
-            <param name="id">8006</param>
+            <param name="id">8007</param>
             <param name="control">button</param>
             <param name="dialog">true</param>
             <onclick>Skin.SetBool(Infoline.DisableSource)</onclick>
             <onclick>Skin.SetBool(Infoline.DisableHDR)</onclick>
+            <onclick>Skin.SetBool(Infoline.DisableAudioCodec)</onclick>
             <onclick>Skin.SetBool(Infoline.DisableAudioChannels)</onclick>
             <onclick>Skin.SetBool(Infoline.DisableVersion)</onclick>
             <onclick>Skin.SetBool(Infoline.DisableCollection)</onclick>
