@@ -64,26 +64,14 @@
             <label>$LOCALIZE[33063]</label>
         </include>
 
-        <include content="Settings_Button" description="Customise Style: Home">
+        <include content="Settings_Button" description="Customise Style: Home / Hubs">
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
             <param name="id">007</param>
-            <label>$LOCALIZE[31430]: $LOCALIZE[10000]</label>
+            <label>$LOCALIZE[31430]: $LOCALIZE[10000] / $LOCALIZE[31114]</label>
             <onclick>SetProperty(CustomDialogSettingsTitle,$LOCALIZE[31430]: $LOCALIZE[10000],Home)</onclick>
             <onclick>SetProperty(CustomDialogSettingsItems,Items_Settings_HomeMenuStyle,Home)</onclick>
-            <onclick>ActivateWindow(1118)</onclick>
-        </include>
-
-
-        <include content="Settings_Button" description="Customise Style: Hubs">
-            <param name="dialog">false</param>
-            <param name="window">skinsettings</param>
-            <param name="baseid">$PARAM[baseid]</param>
-            <param name="id">008</param>
-            <label>$LOCALIZE[31430]: $LOCALIZE[31114]</label>
-            <onclick>SetProperty(CustomDialogSettingsTitle,$LOCALIZE[31430]: $LOCALIZE[31114],Home)</onclick>
-            <onclick>SetProperty(CustomDialogSettingsItems,Items_Settings_HubCategoriesStyle,Home)</onclick>
             <onclick>ActivateWindow(1118)</onclick>
         </include>
 
