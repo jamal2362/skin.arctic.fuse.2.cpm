@@ -159,15 +159,11 @@
                                     <label>$LOCALIZE[456]</label>
                                     <label2>$VAR[Shortcuts_Window_Var_Label_ClassicMode]</label2>
 
-                                    <include content="Shortcuts_Window_Mode_OnClick"><param name="id">Home</param></include>
-                                    <include content="Shortcuts_Window_Mode_OnClick"><param name="id">1101</param></include>
-                                    <include content="Shortcuts_Window_Mode_OnClick"><param name="id">1102</param></include>
-                                    <include content="Shortcuts_Window_Mode_OnClick"><param name="id">1103</param></include>
-                                    <include content="Shortcuts_Window_Mode_OnClick"><param name="id">1104</param></include>
-                                    <include content="Shortcuts_Window_Mode_OnClick"><param name="id">1106</param></include>
-                                    <include content="Shortcuts_Window_Mode_OnClick"><param name="id">1107</param></include>
-                                    <include content="Shortcuts_Window_Mode_OnClick"><param name="id">1108</param></include>
-                                    <include content="Shortcuts_Window_Mode_OnClick"><param name="id">1109</param></include>
+                                    <onclick>SetProperty(CustomDialogPreviewTitle,$LOCALIZE[456]: $INFO[Container(30000).ListItem.Label],Home)</onclick>
+                                    <onclick>SetProperty(CustomDialogPreviewItems,Items_Preview_WidgetsMode,Home)</onclick>
+                                    <onclick>SetProperty(CustomDialogPreviewSelected,$VAR[Shortcuts_Window_Var_Label_ClassicMode_Preselect],Home)</onclick>
+                                    <onclick>SetProperty(CustomDialogPreviewWindowID,$INFO[Container(30000).ListItem.Property(value)],Home)</onclick>
+                                    <onclick>ActivateWindow(1112)</onclick>
 
                                     <onfocus>SetProperty(HelpHead,$LOCALIZE[456],1115)</onfocus>
                                     <onfocus>SetProperty(HelpText,$LOCALIZE[31278][CR][CR]$LOCALIZE[31280] $LOCALIZE[31305] $LOCALIZE[31306][CR][CR][COLOR=main_fg_90][B]$LOCALIZE[31170][/B][/COLOR] — $LOCALIZE[31345],1115)</onfocus>

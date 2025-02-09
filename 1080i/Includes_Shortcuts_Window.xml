@@ -79,21 +79,16 @@
         <onclick condition="String.IsEqual(Container(30000).ListItem.Property(categories_menu),menu=$PARAM[id]menu) + Skin.String(Hub.Home.ReplaceWindow,$NUMBER[$PARAM[id]])">Skin.Reset(Hub.Home.ReplaceWindow)</onclick>
     </include>
 
-    <include name="Shortcuts_Window_Mode_OnClick">
-        <onclick condition="String.IsEqual(Container(30000).ListItem.Property(value),Hub.$PARAM[id]) + !Skin.HasSetting(Hub.$PARAM[id].DisableSubmenu)">Skin.SetBool(Hub.$PARAM[id].DisableSubmenu)</onclick>
-        <onclick condition="String.IsEqual(Container(30000).ListItem.Property(value),Hub.$PARAM[id]) + !Skin.HasSetting(Hub.$PARAM[id].DisableSubmenu)">Skin.Reset(Hub.$PARAM[id].EnableDetailedInformation)</onclick>
-
-        <onclick condition="String.IsEqual(Container(30000).ListItem.Property(value),Hub.$PARAM[id]) + Skin.HasSetting(Hub.$PARAM[id].DisableSubmenu) + !Skin.HasSetting(Hub.$PARAM[id].EnableDetailedInformation)">Skin.SetBool(Hub.$PARAM[id].DisableSubmenu)</onclick>
-        <onclick condition="String.IsEqual(Container(30000).ListItem.Property(value),Hub.$PARAM[id]) + Skin.HasSetting(Hub.$PARAM[id].DisableSubmenu) + !Skin.HasSetting(Hub.$PARAM[id].EnableDetailedInformation)">Skin.SetBool(Hub.$PARAM[id].EnableDetailedInformation)</onclick>
-
-        <onclick condition="String.IsEqual(Container(30000).ListItem.Property(value),Hub.$PARAM[id]) + Skin.HasSetting(Hub.$PARAM[id].DisableSubmenu) + Skin.HasSetting(Hub.$PARAM[id].EnableDetailedInformation)">Skin.Reset(Hub.$PARAM[id].DisableSubmenu)</onclick>
-        <onclick condition="String.IsEqual(Container(30000).ListItem.Property(value),Hub.$PARAM[id]) + Skin.HasSetting(Hub.$PARAM[id].DisableSubmenu) + Skin.HasSetting(Hub.$PARAM[id].EnableDetailedInformation)">Skin.Reset(Hub.$PARAM[id].EnableDetailedInformation)</onclick>
-    </include>
-
     <variable name="Shortcuts_Window_Var_Label_ClassicMode">
         <value condition="!$EXP[Shortcuts_Window_Exp_WidgetsOnly]">$LOCALIZE[10038] ($LOCALIZE[31103] + $LOCALIZE[14116] + $LOCALIZE[31147])</value>
         <value condition="!$EXP[Shortcuts_Window_Exp_ExpandedInformation]">$LOCALIZE[10036] ($LOCALIZE[31103])</value>
         <value>$LOCALIZE[31137] ($LOCALIZE[31103] + $LOCALIZE[14116])</value>
+    </variable>
+
+    <variable name="Shortcuts_Window_Var_Label_ClassicMode_Preselect">
+        <value condition="!$EXP[Shortcuts_Window_Exp_WidgetsOnly]">$LOCALIZE[10038]</value>
+        <value condition="!$EXP[Shortcuts_Window_Exp_ExpandedInformation]">$LOCALIZE[10036]</value>
+        <value>$LOCALIZE[31137]</value>
     </variable>
 
     <variable name="Shortcuts_Window_Var_Image_ClassicMode">

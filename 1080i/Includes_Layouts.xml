@@ -40,6 +40,7 @@
 
     <include name="Layout_Wizard">
         <param name="selected">false</param>
+        <param name="checkmark_condition">!String.IsEmpty(ListItem.Property(selected))</param>
         <definition>
             <control type="group">
                 <top>40</top>
@@ -75,13 +76,13 @@
                             <control type="image">
                                 <texture colordiffuse="panel_fg_90">buttons/check-on.png</texture>
                             </control>
-                            <visible>!String.IsEmpty(ListItem.Property(selected))</visible>
+                            <visible>$PARAM[checkmark_condition]</visible>
                         </control>
                     </include>
                     <include content="Object_SelectBox" condition="$PARAM[selected]">
                         <param name="indicator">false</param>
                         <param name="focusbounce">true</param>
-                        <visible>Control.HasFocus(50)</visible>
+                        <visible>Control.HasFocus($PARAM[id])</visible>
                     </include>
                 </control>
             </control>
