@@ -175,7 +175,7 @@
             <param name="control">button</param>
             <label>$LOCALIZE[31150] [LOWERCASE]$LOCALIZE[736][/LOWERCASE]</label>
             <label2>$VAR[Label_Setting_HubsMenuStyle]</label2>
-            <onclick>Skin.ToggleSetting(Hubs.DisableTextCategories)</onclick>
+            <onclick>RunScript(script.skinvariables,run_dialog=select,preselect=$VAR[Label_Setting_HubsMenuStyle],heading=$LOCALIZE[31150] $LOCALIZE[736],separator=||,list=$LOCALIZE[31274]||$LOCALIZE[31329],"executebuiltin_0=Skin.Reset(Hubs.MenuStyle)","executebuiltin_1=Skin.SetString(Hubs.MenuStyle,Text)")</onclick>
         </include>
         <include content="Settings_Button" description="Spotlight button">
             <param name="dialog">true</param>
