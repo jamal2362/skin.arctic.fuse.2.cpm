@@ -51,9 +51,9 @@
                                     <label>$LOCALIZE[29921]</label>
                                     <label2>$LOCALIZE[31448] [LOWERCASE]$LOCALIZE[14125], $LOCALIZE[12999], $LOCALIZE[31487] $LOCALIZE[13200][/LOWERCASE].</label2>
                                 </item>
-                                <item id="7" description="Expert">
-                                    <label>$LOCALIZE[10039]</label>
-                                    <label2>$LOCALIZE[31448] [LOWERCASE]$LOCALIZE[10039], $LOCALIZE[39024], $LOCALIZE[31487] $LOCALIZE[14260][/LOWERCASE].</label2>
+                                <item id="7" description="Dependencies">
+                                    <label>$LOCALIZE[39024]</label>
+                                    <label2>$LOCALIZE[31448] [LOWERCASE]$LOCALIZE[39024] $LOCALIZE[31487] $LOCALIZE[14260][/LOWERCASE].</label2>
                                 </item>
                                 <item id="8" description="Thanks">
                                     <label>$LOCALIZE[31350]</label>
@@ -102,7 +102,7 @@
                         <include content="SkinSettings_Items_Other">
                             <param name="baseid">6</param>
                         </include>
-                        <include content="SkinSettings_Items_Expert">
+                        <include content="SkinSettings_Items_Dependecies">
                             <param name="baseid">7</param>
                         </include>
                         <include content="SkinSettings_Items_Thanks">

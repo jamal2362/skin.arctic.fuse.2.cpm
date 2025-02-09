@@ -772,21 +772,19 @@
             <selected>Skin.HasSetting(SkinUserLogin.StartupLoginScreen)</selected>
             <visible>!Skin.HasSetting(SkinUserLogin.Disabled)</visible>
         </include>
-    </include>
 
-    <!-- Expert -->
-    <include name="SkinSettings_Items_Expert">
+
         <include content="Settings_Label" description="Expert">
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
-            <param name="id">001</param>
+            <param name="id">010</param>
             <label>$LOCALIZE[10039]</label>
         </include>
         <include content="Settings_Button" description="Nuke Everything">
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
-            <param name="id">002</param>
+            <param name="id">011</param>
             <label>$LOCALIZE[31374]</label>
             <onclick>SetProperty(StartupReplaceWindow,skinsettings,Home)</onclick>
             <onclick>Skin.ResetSettings</onclick>
@@ -796,7 +794,7 @@
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
-            <param name="id">003</param>
+            <param name="id">012</param>
             <label>$LOCALIZE[31376]</label>
             <visible>!String.IsEmpty(Skin.String(SearchHistory))</visible>
             <onclick>Skin.Reset(SearchHistory)</onclick>
@@ -805,7 +803,7 @@
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
-            <param name="id">004</param>
+            <param name="id">013</param>
             <param name="control">radiobutton</param>
             <param name="reload">true</param>
             <label>$LOCALIZE[31036]</label>
@@ -817,7 +815,7 @@
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
-            <param name="id">026</param>
+            <param name="id">014</param>
             <param name="control">radiobutton</param>
             <label>PVR $LOCALIZE[31435]</label>
             <onclick>Skin.ToggleSetting(TMDbHelper.DisablePVR)</onclick>
@@ -828,7 +826,7 @@
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
-            <param name="id">005</param>
+            <param name="id">015</param>
             <param name="control">radiobutton</param>
             <label>$LOCALIZE[31510]</label>
             <onclick>Skin.ToggleSetting(EnableHolidayTheme)</onclick>
@@ -838,7 +836,7 @@
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
-            <param name="id">006</param>
+            <param name="id">016</param>
             <param name="control">radiobutton</param>
             <param name="reload">true</param>
             <label>$LOCALIZE[31116]</label>
@@ -851,13 +849,17 @@
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>
             <param name="baseid">$PARAM[baseid]</param>
-            <param name="id">007</param>
+            <param name="id">017</param>
             <param name="control">radiobutton</param>
             <label>$LOCALIZE[31115]</label>
             <onclick>Skin.ToggleSetting(HolidayMode.Australia)</onclick>
             <selected>Skin.HasSetting(HolidayMode.Australia)</selected>
             <visible>Skin.HasSetting(EnableHolidayTheme)</visible>
         </include>
+    </include>
+
+    <!-- Dependecies -->
+    <include name="SkinSettings_Items_Dependecies">
 
 
         <include content="Settings_Label" description="Dependencies">
