@@ -30,7 +30,7 @@
             <include content="Dialog_Foreground_Side">
                 <param name="dialog_size">Dimension_DialogMainMenu</param>
                 <param name="slide_condition">false</param>
-                <param name="lines_right">640</param>
+                <param name="lines_right">560</param>
                 <param name="topline">true</param>
                 <param name="subline">true</param>
             </include>
@@ -61,7 +61,7 @@
                 <control type="group">
                     <include>Dimension_Dialog_Body_Group</include>
                     <control type="group">
-                        <right>640</right>
+                        <right>560</right>
 
                         <control type="list" id="22001">
                             <nested />
@@ -275,7 +275,7 @@
                     </control>
                     <control type="group">
                         <right>0</right>
-                        <width>640</width>
+                        <width>560</width>
                         <include content="Dialog_Outline_InnerBox">
                             <top>-20</top>
                             <bottom>-20</bottom>
