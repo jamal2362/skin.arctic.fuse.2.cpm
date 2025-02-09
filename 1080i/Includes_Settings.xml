@@ -132,7 +132,7 @@
     <include name="Settings_Visible_Level">
         <param name="slevel">0</param>
         <definition>
-            <visible>!Integer.IsLess(Skin.String(Skin.SettingsLevel),$PARAM[slevel])</visible>
+            <visible>!Integer.IsLess(Window(Home).Property(Skin.SettingsLevel),$PARAM[slevel])</visible>
         </definition>
     </include>
 
