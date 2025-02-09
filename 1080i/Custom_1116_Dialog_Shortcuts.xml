@@ -160,9 +160,12 @@
                                 <control type="button" id="22903">
                                     <texturenofocus colordiffuse="$VAR[Shortcuts_ColorSelected_30]">special://skin/extras/icons/circle-plus.png</texturenofocus>
                                     <texturefocus colordiffuse="$VAR[ColorSelected]">special://skin/extras/icons/circle-plus.png</texturefocus>
+
                                     <onclick condition="!$EXP[Shortcuts_Dialog_Exp_IsWidgetMode]">SetProperty(Shortcuts.Groupings.Links,Links,Home)</onclick>
                                     <onclick condition="$EXP[Shortcuts_Dialog_Exp_IsWidgetMode]">ClearProperty(Shortcuts.Groupings.Links,Home)</onclick>
-                                    <onclick>RunPlugin($INFO[Container(22001).ListItem.Property(url),,&amp;func=do_new]$VAR[Path_Shortcut_UseRawPath])</onclick>
+
+                                    <onclick>RunScript(script.skinvariables,run_dialog=yesnocustom,"heading=$LOCALIZE[31568]","message=$LOCALIZE[31567]",nolabel=$LOCALIZE[31533],yeslabel=$LOCALIZE[31569],customlabel=$LOCALIZE[222],"executebuiltin_1=RunPlugin($INFO[Container(22001).ListItem.Property(url),,&amp;func=do_new]$VAR[Path_Shortcut_UseRawPath])","executebuiltin_0=ClearProperty(Shortcuts.Groupings.Links,Home)||RunPlugin($INFO[Container(22001).ListItem.Property(url),,&amp;func=do_list_add&amp;&amp;item_limit::80]$VAR[Path_Shortcut_UseRawPath])")</onclick>
+
                                     <onback>29999</onback>
                                     <width>64</width>
                                     <height>64</height>
@@ -266,7 +269,16 @@
                                     <param name="include_customwidth">true</param>
                                     <param name="icon_offset_x">-20</param>
                                     <onclick>SetFocus(22001)</onclick>
-                                    <onclick>RunPlugin($INFO[Container(22001).ListItem.Property(url),,&amp;func=do_delete])</onclick>
+                                    <!-- <onclick>RunPlugin($INFO[Container(22001).ListItem.Property(url),,&amp;func=do_delete])</onclick> -->
+
+                                    <onclick condition="!$EXP[Shortcuts_Dialog_Exp_IsWidgetMode]">SetProperty(Shortcuts.Groupings.Links,Links,Home)</onclick>
+                                    <onclick condition="$EXP[Shortcuts_Dialog_Exp_IsWidgetMode]">ClearProperty(Shortcuts.Groupings.Links,Home)</onclick>
+
+                                    <onclick>RunScript(script.skinvariables,run_dialog=yesnocustom,"heading=$LOCALIZE[31570]","message=$LOCALIZE[31571]",nolabel=$LOCALIZE[31573],yeslabel=$LOCALIZE[31572],customlabel=$LOCALIZE[222],"executebuiltin_1=RunPlugin($INFO[Container(22001).ListItem.Property(url),,&amp;func=do_delete]$VAR[Path_Shortcut_UseRawPath])","executebuiltin_0=ClearProperty(Shortcuts.Groupings.Links,Home)||RunPlugin($INFO[Container(22001).ListItem.Property(url),,&amp;func=do_list_del]$VAR[Path_Shortcut_UseRawPath])")</onclick>
+
+                                    <!-- Old condition for list del -->
+                                    <!-- [String.IsEqual(Window(Home).Property(Shortcuts.EditMode),mode=widgets) | String.IsEqual(Window(Home).Property(Shortcuts.EditMode),mode=submenu) | String.EndsWith(Window(Home).Property(Shortcuts.EditMenu),-widgetsonly) | String.EndsWith(Window(Home).Property(Shortcuts.EditMenu),-globalwidgets) | String.IsEmpty(Window(Home).Property(Shortcuts.EditMode))] -->
+
                                     <onback>22001</onback>
                                 </include>
                             </control>

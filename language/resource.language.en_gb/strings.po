@@ -2713,3 +2713,38 @@ msgstr ""
 msgctxt "#31566"
 msgid "Development tools and experimental options."
 msgstr ""
+
+#: /1080i/Custom_1116_Dialog_Shortcuts.xml
+msgctxt "#31567"
+msgid "Add a single item or a list of several items?"
+msgstr ""
+
+#: /1080i/Custom_1116_Dialog_Shortcuts.xml
+msgctxt "#31568"
+msgid "Add new item(s)"
+msgstr ""
+
+#: /1080i/Custom_1116_Dialog_Shortcuts.xml
+msgctxt "#31569"
+msgid "Add item"
+msgstr ""
+
+#: /1080i/Custom_1116_Dialog_Shortcuts.xml
+msgctxt "#31570"
+msgid "Delete item(s)"
+msgstr ""
+
+#: /1080i/Custom_1116_Dialog_Shortcuts.xml
+msgctxt "#31571"
+msgid "Delete a single item or a list of several items?"
+msgstr ""
+
+#: /1080i/Custom_1116_Dialog_Shortcuts.xml
+msgctxt "#31572"
+msgid "Delete item"
+msgstr ""
+
+#: /1080i/Custom_1116_Dialog_Shortcuts.xml
+msgctxt "#31573"
+msgid "Delete list"
+msgstr ""
