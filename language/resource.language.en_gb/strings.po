@@ -2625,6 +2625,11 @@ msgid "Use detailed status"
 msgstr ""
 
 #: /1080i/Custom_1115_Dialog_Shortcuts_Window.xml
+msgctxt "#31549"
+msgid "Choose which hub window to use as the home screen."
+msgstr ""
+
+#: /1080i/Custom_1115_Dialog_Shortcuts_Window.xml
 msgctxt "#31551"
 msgid "Use as home"
 msgstr ""
