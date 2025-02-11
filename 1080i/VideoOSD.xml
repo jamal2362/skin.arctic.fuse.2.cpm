@@ -131,6 +131,32 @@
                             <param name="groupid">6105</param>
                             <param name="itemgap">osd_itemgap</param>
                         </include>
+						
+                        <!-- Button PlayerProcessInfo -->
+                        <control type="button" id="6015">
+                            <include>Defs_OSD_Button</include>
+                            <onclick>CancelAlarm(osd_timeout,true)</onclick>
+                            <onclick>ActivateWindow(playerprocessinfo)</onclick>
+                        </control>
+                        <include content="OSD_Button_Icon_Overlay">
+                            <param name="icon">special://skin/extras/icons/ppi.png</param>
+                            <param name="id">6015</param>
+                            <param name="groupid">6115</param>
+                            <param name="itemgap">osd_itemgap</param>
+                        </include>
+					
+                        <!-- Button VS10 -->
+                        <control type="button" id="6016">
+                            <include>Defs_OSD_Button</include>
+                            <onclick>CancelAlarm(osd_timeout,true)</onclick>
+                            <onclick>ActivateWindow(1189)</onclick>
+                        </control>
+                        <include content="OSD_Button_Icon_Overlay">
+                            <param name="icon">special://skin/extras/icons/vs10.png</param>
+                            <param name="id">6016</param>
+                            <param name="groupid">6116</param>
+                            <param name="itemgap">osd_itemgap</param>
+                        </include>
 
                         <!-- Button 6 -->
                         <control type="button" id="6006">
