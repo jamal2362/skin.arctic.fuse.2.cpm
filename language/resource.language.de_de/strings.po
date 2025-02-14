@@ -3019,3 +3019,7 @@ msgstr "VS10-Modus"
 msgctxt "#32066"
 msgid "Audio codec"
 msgstr "Audiocodec"
+
+msgctxt "#32067"
+msgid "L5 Active Offsets"
+msgstr "L5 Aktive Offsets"

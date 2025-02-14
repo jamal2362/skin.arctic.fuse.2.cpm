@@ -3018,3 +3018,7 @@ msgstr ""
 msgctxt "#32066"
 msgid "Audio codec"
 msgstr ""
+
+msgctxt "#32067"
+msgid "L5 Active Offsets"
+msgstr ""
