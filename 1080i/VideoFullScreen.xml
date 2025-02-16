@@ -36,7 +36,7 @@
             <visible>String.IsEqual(Player.Process(av.change),1)</visible>
             <left>35</left>
             <animation type="Hidden">
-                <effect type="fade" start="100" end="0" delay="3000" time="500" tween="sine" />
+                <effect type="fade" start="100" end="0" time="500" tween="sine" />
             </animation>
 			
             <include content="Video_Audio_Background_Flag">
@@ -286,7 +286,7 @@
             <visible>String.IsEqual(Player.Process(av.change),1)</visible>
             <left>855</left>
             <animation type="Hidden">
-                <effect type="fade" start="100" end="0" delay="3000" time="500" tween="sine" />
+                <effect type="fade" start="100" end="0" time="500" tween="sine" />
             </animation>
 			
             <include content="Video_Audio_Background_Flag">
@@ -536,7 +536,7 @@
             <visible>String.IsEqual(Player.Process(av.change),1)</visible>
             <left>1675</left>
             <animation type="Hidden">
-                <effect type="fade" start="100" end="0" delay="3000" time="500" tween="sine" />
+                <effect type="fade" start="100" end="0" time="500" tween="sine" />
             </animation>
 			
             <include content="Video_Audio_Background_Flag">
