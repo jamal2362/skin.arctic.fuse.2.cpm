@@ -35,7 +35,7 @@
         </control>
 
         <control type="image" id="400">
-            <include>Object_Hidden_Button_Definition</include>
+            <include>Object_Hidden_Item_Definition</include>
         </control>
     </controls>
 </window>
