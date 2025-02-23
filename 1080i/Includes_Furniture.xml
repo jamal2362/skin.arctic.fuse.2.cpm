@@ -124,6 +124,7 @@
                 <include content="Animation_SlideIn_Dialog">
                     <param name="visible_condition">!$EXP[Exp_Notification_IsActive]</param>
                     <param name="windowopen_condition">false</param>
+                    <param name="posy">48</param>
                 </include>
                 <control type="group">
                     <visible>!Window.IsActive(visualisation)</visible>
@@ -427,6 +428,7 @@
                 <param name="visible_condition">$PARAM[visible_condition]</param>
                 <param name="windowopen_delay">$PARAM[windowopen_delay]</param>
                 <param name="windowopen_condition">$PARAM[windowopen_condition]</param>
+                <param name="posy">48</param>
             </include>
 
             <include content="Furniture_Busy_FloatingText" condition="$PARAM[haslabel]">
@@ -508,6 +510,7 @@
                 <include content="Animation_SlideIn_Dialog">
                     <param name="visible_condition">!$EXP[Exp_Notification_IsActive]</param>
                     <param name="windowopen_condition">false</param>
+                    <param name="posy">48</param>
                 </include>
 
                 <control type="group">
@@ -548,6 +551,7 @@
                 <include content="Animation_SlideIn_Dialog">
                     <param name="visible_condition">!$EXP[Exp_Notification_IsActive]</param>
                     <param name="windowopen_condition">false</param>
+                    <param name="posy">48</param>
                 </include>
 
                 <include content="Object_Left" condition="!$PARAM[flipx]">
