@@ -215,7 +215,9 @@
 
     <expression name="Exp_OSD_PVRChannelSwitch">[VideoPlayer.Content(livetv) + [!String.IsEmpty(PVR.ChannelNumberInput) | Player.ShowInfo]]</expression>
 
-    <expression name="Exp_OSD_DelayInfo">[System.IdleTime(3) + Skin.HasSetting(OSD.AutoInfoOnPause) + Player.Paused]</expression>
+    <expression name="Exp_OSD_DelayInfo_Timing">[[System.IdleTime(3)] | [System.IdleTime(2) + Skin.String(OSD.AutoOnPause.Delay,2s)] | [System.IdleTime(1) + Skin.String(OSD.AutoOnPause.Delay,1s)] | [System.IdleTime(0) + Skin.String(OSD.AutoOnPause.Delay,0s)]]</expression>
+
+    <expression name="Exp_OSD_DelayInfo">[$EXP[Exp_OSD_DelayInfo_Timing] + Skin.String(OSD.AutoOnPause,Info) + Player.Paused]</expression>
 
     <expression name="Exp_OSD_QuickInfo">[$EXP[Exp_OSD_PVRChannelSwitch] | Window.IsActive(fullscreeninfo) | $EXP[Exp_OSD_DelayInfo]]</expression>
 
