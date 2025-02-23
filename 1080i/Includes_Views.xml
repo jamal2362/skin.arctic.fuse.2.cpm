@@ -873,9 +873,6 @@
                     <visible>!$EXP[Exp_View_ScrollFilter_HasFocus]</visible>
                     <include>Furniture_Bottom_Right</include>
                 </control>
-                <control type="group">
-                    <include>Furniture_Top_Right</include>
-                </control>
             </control>
         </control>
     </include>

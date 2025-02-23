@@ -16,20 +16,27 @@
     <controls>
 
         <control type="group">
+
+            <include content="Animation_ConditionalFade">
+                <param name="condition">![Window.IsActive(VideoFullScreen.xml) | Window.IsActive(MusicVisualisation.xml)]</param>
+            </include>
+
             <include>Animation_OSD_Fullscreen_Change</include>
 
             <control type="group">
                 <include>Animation_OSD_Seekbar_Slide</include>
                 <include>OSD_Progress_Labels</include>
                 <include>OSD_Progress_Bar</include>
-            </control>
 
-            <control type="group">
-                <include content="Furniture_Top_Left">
-                    <param name="id">3099</param>
-                    <param name="label">$VAR[Label_OSD_Header]</param>
-                </include>
-                <include>Furniture_Top_Right</include>
+                <control type="label" id="3099">
+                    <label>$VAR[Label_OSD_Header]</label>
+                    <font>font_midi_bold</font>
+                    <textcolor>panel_fg_90</textcolor>
+                    <height>40</height>
+                    <centerbottom>260</centerbottom>
+                    <left>view_pad</left>
+                    <include>OSD_HideControls</include>
+                </control>
             </control>
 
             <include content="OSD_CastInfo_HintText">

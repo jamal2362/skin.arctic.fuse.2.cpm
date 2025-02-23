@@ -286,7 +286,7 @@
         <control type="image">
             <texture colordiffuse="$VAR[ColorBackground]">background/combined_flixart.png</texture>
         </control>
-        <include>Background_Notification_Overlay</include>
+        <!-- <include>Background_Notification_Overlay</include> -->
         <control type="image">
             <texture colordiffuse="$VAR[ColorBackground]">background/combined_overlay.png</texture>
 
