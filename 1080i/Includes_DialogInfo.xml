@@ -1151,7 +1151,7 @@
         <param name="back_size">160</param>
         <param name="icon_size">40</param>
         <param name="bordersize">-4</param>
-        <param name="itemgap">0</param>
+        <param name="itemgap">10</param>
         <param name="visible">true</param>
         <param name="vertical">true</param>
         <param name="textcolor">main_fg</param>
