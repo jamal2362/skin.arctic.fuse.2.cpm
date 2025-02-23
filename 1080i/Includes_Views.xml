@@ -361,6 +361,7 @@
                     <param name="include_hintlabel">$PARAM[include_hintlabel]</param>
                     <param name="include_customwidth">$PARAM[include_customwidth]</param>
                     <hitrect x="0" y="0" w="0" h="0" />
+                    <onclick>SetFocus(50)</onclick>
                     <onclick condition="Window.IsVisible(videos)">UpdateLibrary(video)</onclick>
                     <onclick condition="Window.IsVisible(music)">UpdateLibrary(music)</onclick>
                 </include>
@@ -378,6 +379,22 @@
                     <param name="include_customwidth">$PARAM[include_customwidth]</param>
                     <hitrect x="0" y="0" w="0" h="0" />
                     <onclick>Addon.OpenSettings($INFO[Container.PluginName])</onclick>
+                </include>
+
+                <!-- Fullscreen -->
+                <include content="DialogInfo_Button">
+                    <param name="vertical">false</param>
+                    <param name="id">8008</param>
+                    <param name="groupid">8108</param>
+                    <param name="label">$LOCALIZE[35232]</param>
+                    <param name="icon">special://skin/extras/icons/fullscreen.png</param>
+                    <param name="itemgap">$PARAM[itemgap]</param>
+                    <param name="visible">Player.HasMedia</param>
+                    <param name="include_hintlabel">$PARAM[include_hintlabel]</param>
+                    <param name="include_customwidth">$PARAM[include_customwidth]</param>
+                    <hitrect x="0" y="0" w="0" h="0" />
+                    <onclick>Dialog.Close(all,true)</onclick>
+                    <onclick>Fullscreen</onclick>
                 </include>
             </control>
         </definition>
