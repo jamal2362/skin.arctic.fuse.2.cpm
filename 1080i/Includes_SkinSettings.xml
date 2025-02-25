@@ -384,18 +384,6 @@
             <onclick>Skin.ToggleSetting(Furniture.DisableStudio)</onclick>
             <visible>!Skin.HasSetting(Furniture.EnableClock)</visible>
         </include>
-        <include content="Settings_Button" description="Date">
-            <param name="dialog">false</param>
-            <param name="window">skinsettings</param>
-            <param name="baseid">$PARAM[baseid]</param>
-            <param name="id">007</param>
-            <param name="control">radiobutton</param>
-            <param name="reload">true</param>
-            <label>$LOCALIZE[552]</label>
-            <selected>Skin.HasSetting(Furniture.EnableExpandedClock)</selected>
-            <visible>Skin.HasSetting(Furniture.EnableClock)</visible>
-            <onclick>Skin.ToggleSetting(Furniture.EnableExpandedClock)</onclick>
-        </include>
         <include content="Settings_Button" description="Now Playing">
             <param name="dialog">false</param>
             <param name="window">skinsettings</param>
