@@ -596,22 +596,24 @@
                 <control type="group">
                     <height>view_landscape_item_h</height>
                     <width>view_landscape_item_w</width>
-                    <include>Object_ItemBack</include>
-                    <control type="image">
-                        <texture background="true" diffuse="diffuse/landscape_w410_h231.png">$VAR[Image_OSD_Landscape]</texture>
-                        <aspectratio scalediffuse="false">keep</aspectratio>
-                    </control>
                     <control type="group">
-                        <visible>VideoPlayer.Content(livetv)</visible>
-                        <include content="Object_ProgressLine">
-                            <param name="progress">PVR.EpgEventProgress</param>
-                        </include>
-                    </control>
-                    <control type="group">
-                        <visible>!VideoPlayer.Content(livetv)</visible>
-                        <include content="Object_ProgressLine">
-                            <param name="progress">Player.Progress</param>
-                        </include>
+                        <include>Object_ItemBack</include>
+                        <control type="image">
+                            <texture background="true" diffuse="diffuse/landscape_w410_h231.png">$VAR[Image_OSD_Landscape]</texture>
+                            <aspectratio scalediffuse="false">keep</aspectratio>
+                        </control>
+                        <control type="group">
+                            <visible>VideoPlayer.Content(livetv)</visible>
+                            <include content="Object_ProgressLine">
+                                <param name="progress">PVR.EpgEventProgress</param>
+                            </include>
+                        </control>
+                        <control type="group">
+                            <visible>!VideoPlayer.Content(livetv)</visible>
+                            <include content="Object_ProgressLine">
+                                <param name="progress">Player.Progress</param>
+                            </include>
+                        </control>
                     </control>
                 </control>
 
