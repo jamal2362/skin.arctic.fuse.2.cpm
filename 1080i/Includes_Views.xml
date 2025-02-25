@@ -95,12 +95,25 @@
                     <include>View_MediaListOverview_Artwork</include>
                 </control>
                 <control type="group">
-                    <left>infodialog_left_w</left>
+
+                    <include content="Object_Left" condition="Skin.HasSetting(View.FlipSide)">
+                        <param name="left">infodialog_left_w</param>
+                    </include>
+                    <include content="Object_Right" condition="!Skin.HasSetting(View.FlipSide)">
+                        <param name="right">infodialog_left_w</param>
+                    </include>
+
+                    <!-- <control type="group">
+                        <visible>Control.IsVisible(552)</visible>
+                        <include content="Info_Viewline">
+                            <param name="top">80</param>
+                        </include>
+                    </control> -->
 
                     <control type="group">
                         <visible>Control.IsVisible(552)</visible>
                         <include content="Info_Viewline">
-                            <param name="top">80</param>
+                            <param name="top">280</param>
                         </include>
                     </control>
 
@@ -109,6 +122,10 @@
                         <include content="Info_Viewline">
                             <param name="top">440</param>
                         </include>
+                    </control>
+
+                    <control type="group">
+                        <visible>Control.IsVisible(550) | Control.IsVisible(552)</visible>
                         <control type="group">
                             <include>Info_Panel_Dimensions</include>
                             <include content="Info_Panel">
@@ -116,6 +133,7 @@
                                 <param name="grouplistid">99953</param>
                                 <param name="plotwidth">90%</param>
                                 <param name="plotheight">80</param>
+                                <param name="details">![Control.IsVisible(552)]</param>
                             </include>
                         </control>
                     </control>
@@ -125,11 +143,11 @@
                 <visible>!$EXP[Exp_View_HasHeader]</visible>
                 <visible>!$EXP[Exp_View_HasIndent]</visible>
                 <control type="group">
-                    <visible>![Control.IsVisible(553) | Control.IsVisible(554)]</visible>
+                    <visible>![Control.IsVisible(553)]</visible>
                     <include>Info_Viewline</include>
                 </control>
                 <control type="group">
-                    <visible>[Control.IsVisible(553) | Control.IsVisible(554)]</visible>
+                    <visible>[Control.IsVisible(553)]</visible>
                     <include content="Info_Viewline">
                         <param name="top">280</param>
                     </include>
@@ -138,7 +156,7 @@
                     <include>Info_Panel_Dimensions</include>
                     <include content="Info_Panel">
                         <param name="visible">String.IsEmpty(Window.Property(TMDBHelper.WidgetContainer))</param>
-                        <param name="details">![Control.IsVisible(553) | Control.IsVisible(554)]</param>
+                        <param name="details">![Control.IsVisible(553)]</param>
                     </include>
                     <include>View_Combined_Info_Panel</include>
                 </control>
@@ -874,12 +892,12 @@
                     </include>
                     <include content="View_Furniture_Scrollbar_V">
                         <param name="id">65</param>
-                        <param name="height">585</param>
+                        <param name="height">400</param>
                         <param name="visible">$EXP[Exp_View_Scrollbar_Midi_V]</param>
                     </include>
                     <include content="View_Furniture_Scrollbar_V">
                         <param name="id">66</param>
-                        <param name="height">660</param>
+                        <param name="height">560</param>
                         <param name="visible">$EXP[Exp_View_Scrollbar_Maxi_V]</param>
                     </include>
                 </control>
