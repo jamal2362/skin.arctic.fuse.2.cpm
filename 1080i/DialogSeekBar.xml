@@ -16,6 +16,9 @@
     <controls>
 
         <control type="group">
+            <include condition="Skin.HasSetting(osd.useleftCodecLogos)">CodecLogosLeftOSD</include>
+            <include condition="Skin.HasSetting(osd.usecenterCodecLogos)">CodecLogosCenterOSD</include>
+            <include condition="Skin.HasSetting(osd.userightCodecLogos)">CodecLogosRightOSD</include>
 
             <include content="Animation_ConditionalFade">
                 <param name="condition">![Window.IsActive(VideoFullScreen.xml) | Window.IsActive(MusicVisualisation.xml)]</param>
