@@ -1104,6 +1104,10 @@
                         <top>20</top>
                         <bottom>20</bottom>
                         <left>20</left>
+                        <include content="Object_ItemBack">
+                            <param name="selected">$PARAM[selected]</param>
+                            <param name="shadow_colordiffuse">$PARAM[shadow_colordiffuse]</param>
+                        </include>
                         <control type="group">
                             <visible>![$EXP[Exp_IsGenre] | $EXP[Exp_IsStudio] | $EXP[Exp_IsCountry]]</visible>
                             <control type="image">
