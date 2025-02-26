@@ -3,24 +3,12 @@
 
     <!-- Details List -->
     <include name="View_550_MediaList">
-        <include content="View_MediaList_Include" condition="!Skin.HasSetting(View.FlipSide)">
+        <include content="View_MediaList_Include">
             <param name="id">550</param>
             <param name="viewtype_label">$LOCALIZE[31480]</param>
             <param name="visible">$EXP[Exp_View_550]</param>
             <param name="right">infodialog_left_w</param>
             <param name="left">0</param>
-            <param name="top">320</param>
-            <param name="focusposition">1</param>
-            <param name="movement">3</param>
-            <param name="scrollbar_id">65</param>
-            <param name="overlay">true</param>
-        </include>
-        <include content="View_MediaList_Include" condition="Skin.HasSetting(View.FlipSide)">
-            <param name="id">550</param>
-            <param name="viewtype_label">$LOCALIZE[31480]</param>
-            <param name="visible">$EXP[Exp_View_550]</param>
-            <param name="left">infodialog_left_w</param>
-            <param name="right">0</param>
             <param name="top">320</param>
             <param name="focusposition">1</param>
             <param name="movement">3</param>
@@ -77,24 +65,12 @@
 
     <!-- Media List -->
     <include name="View_552_Information_MediaList">
-        <include content="View_MediaList_Include" condition="!Skin.HasSetting(View.FlipSide)">
+        <include content="View_MediaList_Include">
             <param name="id">552</param>
             <param name="viewtype_label">$LOCALIZE[31559]</param>
             <param name="visible">$EXP[Exp_View_552]</param>
             <param name="left">0</param>
             <param name="right">infodialog_left_w</param>
-            <param name="top">160</param>
-            <param name="focusposition">1</param>
-            <param name="movement">5</param>
-            <param name="scrollbar_id">66</param>
-            <param name="overlay">true</param>
-        </include>
-        <include content="View_MediaList_Include" condition="Skin.HasSetting(View.FlipSide)">
-            <param name="id">552</param>
-            <param name="viewtype_label">$LOCALIZE[31559]</param>
-            <param name="visible">$EXP[Exp_View_552]</param>
-            <param name="left">infodialog_left_w</param>
-            <param name="right">20</param>
             <param name="top">160</param>
             <param name="focusposition">1</param>
             <param name="movement">5</param>
@@ -115,7 +91,6 @@
             <param name="movement">5</param>
             <param name="scrollbar_id">66</param>
             <param name="overlay">true</param>
-
 
             <control type="group">
                 <height>585</height>
@@ -165,6 +140,7 @@
             <param name="item_height">193.33</param>
             <param name="misc">237.037</param>
             <param name="diffuse">diffuse/landscape_w237_h133.png</param>
+
             <control type="group">
                 <height>585</height>
                 <width>410</width>
@@ -186,13 +162,7 @@
     <include name="View_MediaListOverview_Artwork">
         <control type="group">
 
-            <include content="Object_Left" condition="Skin.HasSetting(View.FlipSide)">
-                <param name="left">0</param>
-            </include>
-            <include content="Object_Right" condition="!Skin.HasSetting(View.FlipSide)">
-                <param name="right">0</param>
-            </include>
-
+            <right>0</right>
             <top>-100</top>
             <width>infodialog_poster_w</width>
             <height>infodialog_poster_h</height>
@@ -210,12 +180,7 @@
                 <control type="image">
                     <width>infodialog_poster_w</width>
                     <height>infodialog_poster_w</height>
-                    <include content="Object_CenterBottom" condition="!Skin.HasSetting(View.FlipSide)">
-                        <param name="centerbottom">infodialog_poster_w</param>
-                    </include>
-                    <include content="Object_CenterTop" condition="Skin.HasSetting(View.FlipSide)">
-                        <param name="centertop">infodialog_poster_w</param>
-                    </include>
+                    <centerbottom>infodialog_poster_w</centerbottom>
                     <texture background="true">$VAR[Image_DiscArt]</texture>
                     <bordersize>20</bordersize>
                     <animation effect="rotate" condition="Player.Playing" start="0" end="-360" loop="true" time="30000" center="auto" reversible="false">Conditional</animation>
@@ -225,12 +190,7 @@
                     <param name="icon">$VAR[Image_Poster]</param>
                     <param name="diffuse">diffuse/square_w560_h560.png</param>
                     <height>infodialog_poster_w</height>
-                    <include content="Object_Bottom" condition="!Skin.HasSetting(View.FlipSide)">
-                        <param name="bottom">0</param>
-                    </include>
-                    <include content="Object_Top" condition="Skin.HasSetting(View.FlipSide)">
-                        <param name="top">0</param>
-                    </include>
+                    <bottom>0</bottom>
                 </include>
             </control>
 

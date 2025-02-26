@@ -88,6 +88,8 @@
                 </control>
             </control>
 
+
+
             <control type="group">
                 <visible>$EXP[Exp_View_HasIndent]</visible>
                 <control type="group">
@@ -95,21 +97,7 @@
                     <include>View_MediaListOverview_Artwork</include>
                 </control>
                 <control type="group">
-
-                    <include content="Object_Left" condition="Skin.HasSetting(View.FlipSide)">
-                        <param name="left">infodialog_left_w</param>
-                    </include>
-                    <include content="Object_Right" condition="!Skin.HasSetting(View.FlipSide)">
-                        <param name="right">infodialog_left_w</param>
-                    </include>
-
-                    <!-- <control type="group">
-                        <visible>Control.IsVisible(552)</visible>
-                        <include content="Info_Viewline">
-                            <param name="top">80</param>
-                        </include>
-                    </control> -->
-
+                    <right>infodialog_left_w</right>
                     <control type="group">
                         <visible>Control.IsVisible(552)</visible>
                         <include content="Info_Viewline">
