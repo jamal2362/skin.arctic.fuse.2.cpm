@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
     <include name="View_MediaWindows_ID">
-        <views>50,51,52,53,54,57,58,59,500,510,520,530,540,560,570,580,590,502,512,522,532,542,572,582,592,550,551,552,553,554,555,561</views>
+        <views>50,51,52,53,54,57,58,59,500,510,520,530,540,560,570,580,590,502,512,522,532,542,572,582,592,550,551,552,553,554,555,561,557</views>
     </include>
 
     <include name="View_Row_Header">
@@ -88,6 +88,8 @@
                 </control>
             </control>
 
+
+
             <control type="group">
                 <visible>$EXP[Exp_View_HasIndent]</visible>
                 <control type="group">
@@ -95,12 +97,11 @@
                     <include>View_MediaListOverview_Artwork</include>
                 </control>
                 <control type="group">
-                    <left>infodialog_left_w</left>
-
+                    <right>infodialog_left_w</right>
                     <control type="group">
                         <visible>Control.IsVisible(552)</visible>
                         <include content="Info_Viewline">
-                            <param name="top">80</param>
+                            <param name="top">280</param>
                         </include>
                     </control>
 
@@ -109,6 +110,10 @@
                         <include content="Info_Viewline">
                             <param name="top">440</param>
                         </include>
+                    </control>
+
+                    <control type="group">
+                        <visible>Control.IsVisible(550) | Control.IsVisible(552)</visible>
                         <control type="group">
                             <include>Info_Panel_Dimensions</include>
                             <include content="Info_Panel">
@@ -116,6 +121,7 @@
                                 <param name="grouplistid">99953</param>
                                 <param name="plotwidth">90%</param>
                                 <param name="plotheight">80</param>
+                                <param name="details">![Control.IsVisible(552)]</param>
                             </include>
                         </control>
                     </control>
@@ -125,11 +131,11 @@
                 <visible>!$EXP[Exp_View_HasHeader]</visible>
                 <visible>!$EXP[Exp_View_HasIndent]</visible>
                 <control type="group">
-                    <visible>![Control.IsVisible(553) | Control.IsVisible(554)]</visible>
+                    <visible>![Control.IsVisible(553) | Control.IsVisible(554) | Control.IsVisible(557)]</visible>
                     <include>Info_Viewline</include>
                 </control>
                 <control type="group">
-                    <visible>[Control.IsVisible(553) | Control.IsVisible(554)]</visible>
+                    <visible>[Control.IsVisible(553) | Control.IsVisible(554) | Control.IsVisible(557)]</visible>
                     <include content="Info_Viewline">
                         <param name="top">280</param>
                     </include>
@@ -138,7 +144,7 @@
                     <include>Info_Panel_Dimensions</include>
                     <include content="Info_Panel">
                         <param name="visible">String.IsEmpty(Window.Property(TMDBHelper.WidgetContainer))</param>
-                        <param name="details">![Control.IsVisible(553) | Control.IsVisible(554)]</param>
+                        <param name="details">![Control.IsVisible(553) | Control.IsVisible(554) | Control.IsVisible(557)]</param>
                     </include>
                     <include>View_Combined_Info_Panel</include>
                 </control>
@@ -170,6 +176,8 @@
         <include condition="$EXP[Exp_View_551_Include]">View_551_Landscape_MediaList</include>
         <include condition="$EXP[Exp_View_552_Include]">View_552_Information_MediaList</include>
         <include condition="$EXP[Exp_View_553_Include]">View_553_Basic_MediaList</include>
+        <include condition="$EXP[Exp_View_554_Include]">View_554_Combo_MediaList</include>
+        <include condition="$EXP[Exp_View_557_Include]">View_557_Broad_MediaList</include>
         <include condition="$EXP[Exp_View_500_Include]">View_500_Square_Wall</include>
         <include condition="$EXP[Exp_View_510_Include]">View_510_Landscape_Wall</include>
         <include condition="$EXP[Exp_View_520_Include]">View_520_Poster_Wall</include>
@@ -361,6 +369,7 @@
                     <param name="include_hintlabel">$PARAM[include_hintlabel]</param>
                     <param name="include_customwidth">$PARAM[include_customwidth]</param>
                     <hitrect x="0" y="0" w="0" h="0" />
+                    <onclick>SetFocus(50)</onclick>
                     <onclick condition="Window.IsVisible(videos)">UpdateLibrary(video)</onclick>
                     <onclick condition="Window.IsVisible(music)">UpdateLibrary(music)</onclick>
                 </include>
@@ -378,6 +387,22 @@
                     <param name="include_customwidth">$PARAM[include_customwidth]</param>
                     <hitrect x="0" y="0" w="0" h="0" />
                     <onclick>Addon.OpenSettings($INFO[Container.PluginName])</onclick>
+                </include>
+
+                <!-- Fullscreen -->
+                <include content="DialogInfo_Button">
+                    <param name="vertical">false</param>
+                    <param name="id">8008</param>
+                    <param name="groupid">8108</param>
+                    <param name="label">$LOCALIZE[35232]</param>
+                    <param name="icon">special://skin/extras/icons/fullscreen.png</param>
+                    <param name="itemgap">$PARAM[itemgap]</param>
+                    <param name="visible">Player.HasMedia</param>
+                    <param name="include_hintlabel">$PARAM[include_hintlabel]</param>
+                    <param name="include_customwidth">$PARAM[include_customwidth]</param>
+                    <hitrect x="0" y="0" w="0" h="0" />
+                    <onclick>Dialog.Close(all,true)</onclick>
+                    <onclick>Fullscreen</onclick>
                 </include>
             </control>
         </definition>
@@ -412,6 +437,7 @@
     <include name="View_Scrollbar_Strip">
 
         <control type="group">
+            <!-- <centertop>0</centertop> -->
             <centertop>50%</centertop>
             <height>scrollbar_w</height>
             <left>view_poster_itemlayout_w</left>
@@ -856,12 +882,12 @@
                     </include>
                     <include content="View_Furniture_Scrollbar_V">
                         <param name="id">65</param>
-                        <param name="height">585</param>
+                        <param name="height">400</param>
                         <param name="visible">$EXP[Exp_View_Scrollbar_Midi_V]</param>
                     </include>
                     <include content="View_Furniture_Scrollbar_V">
                         <param name="id">66</param>
-                        <param name="height">660</param>
+                        <param name="height">560</param>
                         <param name="visible">$EXP[Exp_View_Scrollbar_Maxi_V]</param>
                     </include>
                 </control>
@@ -872,9 +898,6 @@
                 <control type="group">
                     <visible>!$EXP[Exp_View_ScrollFilter_HasFocus]</visible>
                     <include>Furniture_Bottom_Right</include>
-                </control>
-                <control type="group">
-                    <include>Furniture_Top_Right</include>
                 </control>
             </control>
         </control>

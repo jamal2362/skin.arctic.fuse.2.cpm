@@ -216,20 +216,26 @@
         <param name="selected">false</param>
         <param name="detailed">false</param>
         <param name="color">main_fg</param>
+        <param name="centertop">50%</param>
+        <param name="include_hintlabel">false</param>
         <definition>
             <control type="group">
                 <right>20</right>
-                <include content="Object_Control" condition="$PARAM[selected]">
-                    <param name="control">image</param>
-                    <include>Texture_Circle_Highlight_H</include>
-                </include>
-
                 <control type="group">
                     <width>40</width>
                     <height>40</height>
-                    <centertop>50%</centertop>
+                    <centertop>$PARAM[centertop]</centertop>
                     <centerleft>50%</centerleft>
+                    <include content="Object_Control" condition="$PARAM[selected]">
+                        <param name="control">image</param>
+                        <bordersize>-20</bordersize>
+                        <include>Texture_Circle_Highlight_H</include>
+                    </include>
                     <control type="image">
+                        <include content="Object_Top" condition="$PARAM[selected] + $PARAM[include_hintlabel]">
+                            <param name="top">-10</param>
+                        </include>
+                        <height>40</height>
                         <bordersize>icon_home_bordersize</bordersize>
                         <include content="Object_ColorDiffuse" condition="$PARAM[selected]">
                             <param name="colordiffuse">$VAR[ColorSelected]</param>
@@ -237,6 +243,18 @@
                         <colordiffuse>$PARAM[color_nf]</colordiffuse>
                         <texture diffuse="diffuse/circle/circle_120.png">$INFO[ListItem.Icon]</texture>
                     </control>
+                    <include content="Object_Control" condition="$PARAM[selected] + $PARAM[include_hintlabel]">
+                        <param name="control">label</param>
+                        <textcolor>$VAR[ColorSelected]</textcolor>
+                        <font>font_hint</font>
+                        <align>center</align>
+                        <aligny>top</aligny>
+                        <height>10</height>
+                        <centerbottom>11</centerbottom>
+                        <left>-8</left>
+                        <right>-8</right>
+                        <label>$INFO[ListItem.Label]</label>
+                    </include>
                 </control>
             </control>
         </definition>
@@ -1059,12 +1077,13 @@
         <param name="detailed">false</param>
         <param name="selected">false</param>
         <param name="variation">false</param>
-        <param name="icon">$VAR[Image_MediaList_Thumb]</param>
+        <param name="icon">$VAR[Image_Landscape]</param>
         <param name="textcolor">main_fg</param>
         <param name="listitem">ListItem</param>
         <param name="progress">Progress</param>
         <param name="affix" />
         <param name="include_detailed_labels">Skin.HasSetting(View.UseDetailedListLabels)</param>
+        <param name="diffuse">diffuse/landscape_w391_h220.png</param>
         <definition>
             <control type="group">
                 <height>$PARAM[item_h]</height>
@@ -1072,89 +1091,41 @@
                 <control type="group">
                     <left>40</left>
                     <right>60</right>
-                    <top>20</top>
-                    <bottom>20</bottom>
+
+                    <top>10</top>
+                    <bottom>10</bottom>
+
                     <control type="image">
                         <include>Texture_Menu_Highlight_H</include>
                         <visible>$PARAM[selected]</visible>
                     </control>
                     <control type="group">
-                        <width>$PARAM[item_h]</width>
-                        <control type="group">
-                            <right>60</right>
-                            <top>20</top>
-                            <bottom>20</bottom>
-                            <left>20</left>
-                            <control type="image">
-                                <bordersize>-3</bordersize>
-                                <colordiffuse>main_fg_12</colordiffuse>
-                                <texture>diffuse/circle/circle_320.png</texture>
-                                <visible>![$PARAM[selected]]</visible>
-                            </control>
-                            <control type="image">
-                                <bordersize>-3</bordersize>
-                                <colordiffuse>$VAR[ColorSelected_30]</colordiffuse>
-                                <texture>diffuse/circle/circle_320.png</texture>
-                                <visible>$PARAM[selected]</visible>
-                            </control>
-                            <control type="group">
-                                <visible>![$EXP[Exp_IsGenre] | $EXP[Exp_IsStudio] | $EXP[Exp_IsCountry]]</visible>
-                                <control type="image">
-                                    <aspectratio scalediffuse="false">scale</aspectratio>
-                                    <include content="Object_ColorDiffuse" condition="$PARAM[selected]">
-                                        <param name="colordiffuse">$VAR[ColorSelected]</param>
-                                    </include>
-                                    <colordiffuse>main_fg_90</colordiffuse>
-                                    <texture diffuse="diffuse/circle/circle_320.png" background="true">$VAR[Image_MediaList_Icon]</texture>
-                                </control>
-                                <control type="image">
-                                    <aspectratio scalediffuse="false">scale</aspectratio>
-                                    <texture diffuse="diffuse/circle/circle_320.png" colordiffuse="white" background="true">$VAR[Image_MediaList_Thumb]</texture>
-                                </control>
-                            </control>
-                            <control type="group">
-                                <visible>$EXP[Exp_IsGenre] | $EXP[Exp_IsStudio] | $EXP[Exp_IsCountry]</visible>
-                                <control type="image">
-                                    <bordersize>32</bordersize>
-                                    <aspectratio scalediffuse="false">keep</aspectratio>
-                                    <include content="Object_ColorDiffuse" condition="$PARAM[selected]">
-                                        <param name="colordiffuse">$VAR[ColorSelected]</param>
-                                    </include>
-                                    <colordiffuse>main_fg_90</colordiffuse>
-                                    <texture fallback="folder.png" background="true">$VAR[Image_ResourceIcon]</texture>
-                                </control>
-                            </control>
-                            <control type="group">
-                                <centerbottom>12.5%</centerbottom>
-                                <centerright>18%</centerright>
-                                <height>64</height>
-                                <width>64</width>
-                                <include content="Object_Indicator">
-                                    <right>0</right>
-                                    <centerbottom>50%</centerbottom>
-                                    <param name="affix">$PARAM[affix]</param>
-                                    <param name="listitem">$PARAM[listitem]</param>
-                                    <!-- <param name="selected">$PARAM[selected]</param> -->
-                                    <param name="selected">false</param>
-                                    <param name="shadow">false</param>
-                                </include>
-                            </control>
-                        </control>
+                        <width>$PARAM[misc]</width>
+                        <top>20</top>
+                        <bottom>20</bottom>
+                        <left>20</left>
+                        <include content="Object_ItemBack">
+                            <param name="selected">$PARAM[selected]</param>
+                            <param name="shadow_colordiffuse">$PARAM[shadow_colordiffuse]</param>
+                        </include>
+                        <include content="Object_Layout_Image_Rectangle">
+                            <param name="diffuse">$PARAM[diffuse]</param>
+                            <param name="icon">$PARAM[icon]</param>
+                            <param name="listitem">$PARAM[listitem]</param>
+                            <param name="selected">$PARAM[selected]</param>
+                            <param name="aspectratio">scale</param>
+                        </include>
                     </control>
 
                     <control type="group">
-                        <include content="Object_Top" condition="$PARAM[include_detailed_labels]">
-                            <param name="top">8</param>
-                        </include>
-                        <include content="Object_Bottom" condition="$PARAM[include_detailed_labels]">
-                            <param name="bottom">12</param>
-                        </include>
-                        <bottom>20</bottom>
-                        <left>$PARAM[item_h]</left>
+                        <top>-5</top>
+                        <bottom>25</bottom>
+                        <left>$PARAM[misc]</left>
 
                         <control type="group">
-                            <left>-20</left>
+                            <left>60</left>
                             <right>40</right>
+                            <top>10</top>
                             <height>80</height>
 
                             <control type="label">
@@ -1165,33 +1136,7 @@
                                 <include content="Object_Right" condition="$PARAM[variation]">
                                     <param name="right">40</param>
                                 </include>
-                                <right>240</right>
-                                <visible>![$PARAM[include_detailed_labels]]</visible>
-                            </control>
-
-                            <control type="label">
-                                <label>$VAR[Label_MediaList_Title]</label>
-                                <font>font_main_bold</font>
-                                <include condition="$PARAM[selected]">Color_SelectedText</include>
-                                <textcolor>main_fg_90</textcolor>
-                                <include>Dimension_Object_InfoCircle_Text_Top</include>
-                                <include content="Object_Right" condition="$PARAM[variation]">
-                                    <param name="right">40</param>
-                                </include>
-                                <right>240</right>
-                                <visible>$PARAM[include_detailed_labels]</visible>
-                            </control>
-                            <control type="label">
-                                <label>$VAR[Label_VideoInfo_DetailsItem]</label>
-                                <font>font_tiny</font>
-                                <include condition="$PARAM[selected]">Color_SelectedText</include>
-                                <textcolor>main_fg_70</textcolor>
-                                <include>Dimension_Object_InfoCircle_Text_Sub</include>
-                                <include content="Object_Right" condition="$PARAM[variation]">
-                                    <param name="right">40</param>
-                                </include>
-                                <right>240</right>
-                                <visible>$PARAM[include_detailed_labels]</visible>
+                                <right>280</right>
                             </control>
 
                             <control type="group">
@@ -1201,10 +1146,7 @@
                                     <font>font_mini</font>
                                     <include condition="$PARAM[selected]">Color_SelectedText</include>
                                     <textcolor>main_fg_70</textcolor>
-                                    <include content="Object_Label" condition="$PARAM[include_detailed_labels]">
-                                        <param name="label">$VAR[Label_MediaList_Year_DetailedLabels]</param>
-                                    </include>
-                                    <label>$VAR[Label_MediaList_Year]</label>
+                                    <label>$INFO[ListItem.Premiered]</label>
                                     <align>right</align>
                                     <visible>![$PARAM[detailed]]</visible>
                                     <visible>![$PARAM[variation]]</visible>
@@ -1245,12 +1187,13 @@
                         <control type="textbox">
                             <include condition="$PARAM[selected]">Color_SelectedText</include>
                             <label fallback="19055">$VAR[Label_Landscape_Plot]</label>
-                            <font>font_tiny_plot</font>
+                            <font>font_mini_plot</font>
                             <textcolor>main_fg_70</textcolor>
-                            <top>75</top>
-                            <bottom>5</bottom>
-                            <left>-20</left>
+                            <top>80</top>
+                            <bottom>0</bottom>
                             <right>40</right>
+                            <left>60</left>
+                            <autoscroll>false</autoscroll>
                             <visible>![$PARAM[variation]]</visible>
                         </control>
                     </control>

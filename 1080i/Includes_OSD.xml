@@ -369,7 +369,9 @@
             <control type="group">
 
                 <visible>!Window.IsVisible(DialogSettings.xml)</visible>
-                <include>Animation_SlideIn_Dialog</include>
+                <include content="Animation_SlideIn_Dialog">
+                    <param name="posy">48</param>
+                </include>
 
                 <animation effect="fade" start="100" end="0" condition="Integer.IsEqual(Container($PARAM[id]).NumItems,0)">Conditional</animation>
                 <right>-40</right>
@@ -555,28 +557,12 @@
         </control>
     </include>
 
-    <include name="OSD_Progress_Details_TitleInfoLine">
-        <include content="Info_Title">
-            <param name="colordiffuse">panel_fg</param>
-            <param name="container" />
-            <param name="label">$VAR[Label_OSD_Title]</param>
-            <param name="mainlogo_visible">[!String.IsEmpty(Window(Home).Property(TMDbHelper.Player.CropImage))]</param>
-            <param name="mainlogo_texture">$INFO[Window(Home).Property(TMDbHelper.Player.CropImage)]</param>
-            <param name="autoheight">true</param>
-        </include>
-
-        <control type="group">
-            <height>50</height>
-            <include>OSD_Info_Line</include>
-        </control>
-    </include>
-
     <include name="OSD_Progress_Details_Grouplist_Def">
         <align>bottom</align>
-        <left>view_pad</left>
+        <left>0</left>
         <width>info_panel_w</width>
         <top>-40</top>
-        <bottom>220</bottom>
+        <bottom>227.5</bottom>
         <orientation>vertical</orientation>
 
         <control type="group" description="Avoid grouplist chop with spacer">
@@ -585,29 +571,39 @@
     </include>
 
     <include name="OSD_Progress_Details_Extended">
+        <param name="align">bottom</param>
+        <param name="landscape_visible">!Skin.HasSetting(OSD.DisableLandscapeOnInfo)</param>
         <definition>
             <control type="grouplist">
                 <bottom>44</bottom>
+                <align>$PARAM[align]</align>
                 <include>OSD_Progress_Details_Grouplist_Def</include>
                 <control type="group">
+                    <left>view_pad</left>
                     <height>view_landscape_item_h</height>
                     <width>view_landscape_item_w</width>
-                    <include>Object_ItemBack</include>
-                    <control type="image">
-                        <texture background="true" diffuse="diffuse/landscape_w410_h231.png">$VAR[Image_OSD_Landscape]</texture>
-                        <aspectratio scalediffuse="false">keep</aspectratio>
-                    </control>
                     <control type="group">
-                        <visible>VideoPlayer.Content(livetv)</visible>
-                        <include content="Object_ProgressLine">
-                            <param name="progress">PVR.EpgEventProgress</param>
-                        </include>
-                    </control>
-                    <control type="group">
-                        <visible>!VideoPlayer.Content(livetv)</visible>
-                        <include content="Object_ProgressLine">
-                            <param name="progress">Player.Progress</param>
-                        </include>
+                        <visible>$PARAM[landscape_visible]</visible>
+                        <include>Object_ItemBack</include>
+                        <control type="image">
+                            <texture background="true" diffuse="diffuse/landscape_w410_h231.png">$VAR[Image_OSD_Landscape]</texture>
+                            <aspectratio scalediffuse="false">keep</aspectratio>
+                        </control>
+                        <control type="group">
+                            <visible>!Window.IsActive(DialogSeekBar.xml)</visible>
+                            <control type="group">
+                                <visible>VideoPlayer.Content(livetv)</visible>
+                                <include content="Object_ProgressLine">
+                                    <param name="progress">PVR.EpgEventProgress</param>
+                                </include>
+                            </control>
+                            <control type="group">
+                                <visible>!VideoPlayer.Content(livetv)</visible>
+                                <include content="Object_ProgressLine">
+                                    <param name="progress">Player.Progress</param>
+                                </include>
+                            </control>
+                        </control>
                     </control>
                 </control>
 
@@ -615,7 +611,21 @@
                     <height>44</height>
                 </control>
 
-                <include>OSD_Progress_Details_TitleInfoLine</include>
+                <include content="Info_Title">
+                    <param name="colordiffuse">panel_fg</param>
+                    <param name="container" />
+                    <param name="label">$VAR[Label_OSD_Title]</param>
+                    <param name="mainlogo_visible">[!String.IsEmpty(Window(Home).Property(TMDbHelper.Player.CropImage))]</param>
+                    <param name="mainlogo_texture">$INFO[Window(Home).Property(TMDbHelper.Player.CropImage)]</param>
+                    <param name="autoheight">true</param>
+                    <param name="left">view_pad</param>
+                </include>
+
+                <control type="group">
+                    <left>view_pad</left>
+                    <height>50</height>
+                    <include>OSD_Info_Line</include>
+                </control>
 
                 <include content="Info_Panel_Textbox">
                     <param name="plotlabel">$VAR[Label_Player_Plot]</param>
@@ -623,6 +633,7 @@
                     <param name="plotheight">160</param>
                     <param name="check_ratings">false</param>
                     <param name="colordiffuse">panel_fg</param>
+                    <param name="left">view_pad</param>
                 </include>
 
                 <control type="group">
@@ -633,7 +644,7 @@
                 <include content="Info_RatingsLine">
                     <param name="is_player">true</param>
                     <top>0</top>
-                    <left>0</left>
+                    <left>view_pad</left>
                     <visible>!VideoPlayer.Content(livetv)</visible>
                 </include>
 
@@ -641,19 +652,6 @@
                     <visible>!VideoPlayer.Content(livetv)</visible>
                     <height>18</height>
                 </control>
-
-                <control type="group" description="Avoid grouplist chop with spacer">
-                    <height>20</height>
-                </control>
-            </control>
-        </definition>
-    </include>
-
-    <include name="OSD_Progress_Details_Simple">
-        <definition>
-            <control type="grouplist">
-                <include>OSD_Progress_Details_Grouplist_Def</include>
-                <include>OSD_Progress_Details_TitleInfoLine</include>
 
                 <control type="group" description="Avoid grouplist chop with spacer">
                     <height>20</height>
