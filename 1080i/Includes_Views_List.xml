@@ -378,6 +378,57 @@
         <value condition="!String.IsEmpty(Window.Property(SpecialFolderPath))">$INFO[Window.Property(SpecialFolderPath)]</value>
     </variable>
 
+    <include name="View_ComboList_Loading_Item">
+        <control type="group">
+            <top>40</top>
+            <left>40</left>
+            <height>220</height>
+            <control type="group">
+                <width>391.11</width>
+                <include content="Object_ItemBack">
+                    <param name="shadow_colordiffuse">shadow_soft</param>
+                    <param name="colordiffuse">main_fg_12</param>
+                </include>
+            </control>
+
+            <control type="group">
+                <left>391.11</left>
+                <top>-5</top>
+                <height>80</height>
+                <control type="group">
+                    <left>40</left>
+                    <top>20</top>
+                    <height>24</height>
+                    <width>40%</width>
+                    <include content="Object_Control">
+                        <param name="control">image</param>
+                        <include content="Dimension_Padding">
+                            <param name="pad">-20</param>
+                        </include>
+                        <bordersize>20</bordersize>
+                        <bordertexture colordiffuse="shadow_soft" border="32">common/widget_text_shadow_20.png</bordertexture>
+                        <texture colordiffuse="main_fg_12" border="12">common/widget_text.png</texture>
+                    </include>
+                </control>
+                <control type="group">
+                    <left>40</left>
+                    <top>70</top>
+                    <height>135</height>
+                    <width>80%</width>
+                    <include content="Object_Control">
+                        <param name="control">image</param>
+                        <include content="Dimension_Padding">
+                            <param name="pad">-20</param>
+                        </include>
+                        <bordersize>20</bordersize>
+                        <bordertexture colordiffuse="shadow_soft" border="32">common/widget_text_shadow_20.png</bordertexture>
+                        <texture colordiffuse="main_fg_12" border="12">common/widget_text.png</texture>
+                    </include>
+                </control>
+            </control>
+        </control>
+    </include>
+
     <include name="View_ComboList_Include">
         <param name="width">info_title_w</param>
         <definition>
@@ -421,6 +472,11 @@
                     <left>$PARAM[width]</left>
                     <control type="group">
 
+                        <top>-110</top>
+                        <bottom>-10</bottom>
+                        <left>40</left>
+                        <right>-100</right>
+
                         <include content="List_DialogSelect">
                             <param name="id">$PARAM[comboid]</param>
                             <param name="textcolor">main_fg</param>
@@ -440,11 +496,9 @@
                                 <param name="always">true</param>
                             </include>
 
-                            <top>-110</top>
-                            <bottom>-10</bottom>
-
-                            <left>40</left>
-                            <right>-100</right>
+                            <animation type="Conditional" reversible="false" condition="Container($PARAM[comboid]).IsUpdating">
+                                <effect type="fade" start="100" end="0" time="200" delay="600" />
+                            </animation>
 
                             <content target="$VAR[Path_CollectionNode_Target]" sortby="$VAR[View_Combined_SortBy]" sortorder="ascending">$VAR[View_$PARAM[id]_Content]</content>
 
@@ -458,6 +512,26 @@
                             <onfocus>ClearProperty(TMDbHelper.WidgetContainer)</onfocus>
                             <onfocus>SetProperty(Background.ShowOverlay,True,Home)</onfocus>
                         </include>
+
+
+                        <control type="grouplist">
+                            <top>-10</top>
+                            <left>20</left>
+                            <orientation>vertical</orientation>
+
+                            <animation type="Conditional" reversible="false" condition="Container($PARAM[comboid]).IsUpdating">
+                                <effect type="fade" start="0" end="100" time="200" delay="600" />
+                            </animation>
+                            <animation type="Conditional" reversible="false" condition="!Container($PARAM[comboid]).IsUpdating">
+                                <effect type="fade" start="100" end="0" time="0" delay="0" />
+                            </animation>
+
+                            <itemgap>20</itemgap>
+
+                            <include>View_ComboList_Loading_Item</include>
+                            <include>View_ComboList_Loading_Item</include>
+                            <include>View_ComboList_Loading_Item</include>
+                        </control>
                     </control>
                 </control>
             </control>
