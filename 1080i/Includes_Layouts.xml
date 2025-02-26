@@ -1083,6 +1083,7 @@
         <param name="progress">Progress</param>
         <param name="affix" />
         <param name="include_detailed_labels">Skin.HasSetting(View.UseDetailedListLabels)</param>
+        <param name="diffuse">diffuse/landscape_w391_h220.png</param>
         <definition>
             <control type="group">
                 <height>$PARAM[item_h]</height>
@@ -1111,11 +1112,11 @@
                                     <param name="colordiffuse">$VAR[ColorSelected]</param>
                                 </include>
                                 <colordiffuse>main_fg_90</colordiffuse>
-                                <texture background="true" diffuse="diffuse/landscape_w410_h231.png">$VAR[Image_MediaList_Icon]</texture>
+                                <texture background="true" diffuse="$PARAM[diffuse]">$VAR[Image_MediaList_Icon]</texture>
                             </control>
                             <control type="image">
                                 <aspectratio scalediffuse="false">scale</aspectratio>
-                                <texture colordiffuse="white" background="true" diffuse="diffuse/landscape_w410_h231.png">$VAR[Image_MediaList_Thumb]</texture>
+                                <texture colordiffuse="white" background="true" diffuse="$PARAM[diffuse]">$VAR[Image_MediaList_Thumb]</texture>
                             </control>
                         </control>
                         <control type="group">
@@ -1127,13 +1128,14 @@
                                     <param name="colordiffuse">$VAR[ColorSelected]</param>
                                 </include>
                                 <colordiffuse>main_fg_90</colordiffuse>
-                                <texture fallback="folder.png" background="true" diffuse="diffuse/landscape_w410_h231.png">$VAR[Image_ResourceIcon]</texture>
+                                <texture fallback="folder.png" background="true" diffuse="$PARAM[diffuse]">$VAR[Image_ResourceIcon]</texture>
                             </control>
                         </control>
                     </control>
 
                     <control type="group">
-                        <bottom>20</bottom>
+                        <top>-5</top>
+                        <bottom>25</bottom>
                         <left>$PARAM[misc]</left>
 
                         <control type="group">
@@ -1204,7 +1206,7 @@
                             <font>font_mini_plot</font>
                             <textcolor>main_fg_70</textcolor>
                             <top>80</top>
-                            <bottom>10</bottom>
+                            <bottom>0</bottom>
                             <right>40</right>
                             <left>60</left>
                             <autoscroll>false</autoscroll>

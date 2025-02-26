@@ -115,6 +115,8 @@
             <param name="movement">5</param>
             <param name="scrollbar_id">66</param>
             <param name="overlay">true</param>
+
+
             <control type="group">
                 <height>585</height>
                 <width>1040</width>
@@ -131,15 +133,53 @@
                 </control>
             </control>
         </include>
+
     </include>
 
     <!-- Combo List -->
-    <include name="View_554_ComboList">
+    <include name="View_554_Combo_MediaList">
         <include content="View_ComboList_Include">
             <param name="id">554</param>
             <param name="comboid">556</param>
             <param name="viewtype_label">$LOCALIZE[31580]</param>
             <param name="visible">$EXP[Exp_View_554]</param>
+        </include>
+    </include>
+
+
+    <!-- Broad List -->
+    <include name="View_557_Broad_MediaList">
+        <include content="View_MediaList_Include">
+            <param name="id">557</param>
+            <param name="viewtype_label">$LOCALIZE[31581]</param>
+            <param name="visible">$EXP[Exp_View_557]</param>
+            <param name="left">-40</param>
+            <param name="right">450</param>
+            <param name="top">150</param>
+            <param name="bottom">0</param>
+            <param name="focusposition">1</param>
+            <param name="movement">1</param>
+            <param name="scrollbar_id">66</param>
+            <param name="overlay">true</param>
+            <param name="itemlayout_include">Layout_MediaList_Detailed</param>
+            <param name="item_height">193.33</param>
+            <param name="misc">237.037</param>
+            <param name="diffuse">diffuse/landscape_w237_h133.png</param>
+            <control type="group">
+                <height>585</height>
+                <width>410</width>
+                <bottom>0</bottom>
+                <right>0</right>
+                <control type="image">
+                    <include>Texture_Shadow_40</include>
+                    <texture colordiffuse="main_fg_12" border="20">common/box.png</texture>
+                </control>
+                <control type="image">
+                    <texture diffuse="diffuse/poster_w410_h585.png" background="true">$VAR[Image_Poster]</texture>
+                    <fadetime>background_fadetime</fadetime>
+                    <aspectratio scalediffuse="false">scale</aspectratio>
+                </control>
+            </control>
         </include>
     </include>
 
@@ -321,6 +361,7 @@
         <param name="scrollbar_id">64</param>
         <param name="overlay">false</param>
         <param name="control">fixedlist</param>
+        <param name="itemlayout_include">Layout_MediaList</param>
         <definition>
 
             <control type="group">
@@ -333,15 +374,17 @@
                     <left>$PARAM[left]</left>
                     <right>$PARAM[right]</right>
                     <top>$PARAM[top]</top>
+                    <bottom>$PARAM[bottom]</bottom>
 
                     <include content="List_DialogSelect">
                         <param name="id">$PARAM[id]</param>
                         <param name="textcolor">main_fg</param>
                         <param name="control">$PARAM[control]</param>
-                        <param name="itemlayout_include">Layout_MediaList</param>
+                        <param name="itemlayout_include">$PARAM[itemlayout_include]</param>
                         <param name="item_height">$PARAM[item_height]</param>
                         <param name="variation">$PARAM[variation]</param>
                         <param name="include_detailed_labels">$PARAM[include_detailed_labels]</param>
+                        <param name="misc">$PARAM[misc]</param>
 
 
                         <left>-20</left>
