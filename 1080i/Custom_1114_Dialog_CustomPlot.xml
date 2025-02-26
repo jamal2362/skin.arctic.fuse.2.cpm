@@ -11,6 +11,8 @@
     <onunload>ClearProperty(trailer,1114)</onunload>
     <onunload>ClearProperty(tmdb_id,1114)</onunload>
     <onunload>ClearProperty(tmdb_type,1114)</onunload>
+    <onunload>ClearProperty(origin_tmdb_id,1114)</onunload>
+    <onunload>ClearProperty(origin_tmdb_type,1114)</onunload>
     <onload>SetProperty(TMDbHelper.ContextMenu,True)</onload>
     <controls>
 
