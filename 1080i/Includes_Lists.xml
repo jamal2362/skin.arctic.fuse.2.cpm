@@ -1122,14 +1122,14 @@
                     </include>
                 </itemlayout>
 
-                <focusedlayout width="100" height="80" condition="!Control.HasFocus($PARAM[id])">
+                <focusedlayout width="100" height="80" condition="![Control.HasFocus($PARAM[id]) + !Window.IsActive(1163)]">
                     <include content="Layout_IconMenu">
                         <param name="selected">false</param>
                         <param name="color_nf">$PARAM[color_nf]</param>
                     </include>
                 </focusedlayout>
 
-                <focusedlayout width="300" height="80" condition="Control.HasFocus($PARAM[id])">
+                <focusedlayout width="300" height="80" condition="[Control.HasFocus($PARAM[id]) + !Window.IsActive(1163)]">
 
                     <include content="$PARAM[hidden_button]">
                         <param name="id">$PARAM[id]</param>
