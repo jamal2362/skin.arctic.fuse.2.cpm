@@ -91,14 +91,14 @@
             <control type="group">
                 <visible>Control.IsVisible(558)</visible>
                 <control type="group">
-                    <top>620</top>
+                    <top>660</top>
                     <right>view_pad</right>
-                    <width>960</width>
+                    <width>1040</width>
                     <include content="Info_Panel">
                         <param name="visible">String.IsEmpty(Window.Property(TMDBHelper.WidgetContainer))</param>
                         <param name="grouplistid">99954</param>
-                        <param name="plotheight">160</param>
-                        <param name="plotwidth">960</param>
+                        <param name="plotheight">120</param>
+                        <param name="plotwidth">1040</param>
                         <param name="title">false</param>
                     </include>
                 </control>
@@ -106,8 +106,8 @@
                     <right>view_pad</right>
                     <top>view_pad</top>
                     <!-- <bottom>180</bottom> -->
-                    <width>960</width>
-                    <height>540</height>
+                    <width>1040</width>
+                    <height>585</height>
                     <control type="group">
                         <include content="Object_BigPoster">
                             <param name="icon">$VAR[Image_Landscape]</param>
