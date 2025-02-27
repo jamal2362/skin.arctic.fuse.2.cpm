@@ -1166,6 +1166,8 @@
         <param name="button_6">false</param>
         <param name="button_7">false</param>
         <param name="button_8">false</param>
+        <param name="button_9">false</param>
+        <param name="button_10">false</param>
         <param name="iconoffset_condition">false</param>
         <definition>
 
@@ -1261,6 +1263,14 @@
                     <param name="icon">$PARAM[icon]</param>
                     <param name="label">$PARAM[label]</param>
                     <param name="iconoffset_condition">$PARAM[iconoffset_condition]</param>
+                </include>
+
+                <include content="OSD_CustomDialog_FakeButton" condition="![$PARAM[button_9]]">
+                    <param name="id">9</param>
+                </include>
+
+                <include content="OSD_CustomDialog_FakeButton" condition="![$PARAM[button_10]]">
+                    <param name="id">10</param>
                 </include>
 
                 <include content="OSD_CustomDialog_FakeButton" condition="![$PARAM[button_6]]">
