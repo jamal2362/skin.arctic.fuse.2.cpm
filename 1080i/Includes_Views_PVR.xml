@@ -12,7 +12,6 @@
             <height>80</height>
             <left>view_pad</left>
             <centerbottom>100</centerbottom>
-            <width>settings_category_w</width>
             <control type="button" id="28">
                 <left>-20</left>
                 <right>40</right>
@@ -24,6 +23,7 @@
                 <onright>SetFocus(28)</onright>
                 <ondown>50</ondown>
                 <onup>50</onup>
+                <texturefocus />
                 <texturenofocus />
                 <font />
             </control>
@@ -316,18 +316,6 @@
             <control type="group">
                 <include>Animation_View_WindowChange</include>
                 <include>$PARAM[include]</include>
-            </control>
-            <control type="group">
-                <visible>!Control.IsVisible(52)</visible>
-                <visible allowhiddenfocus="true">!$EXP[Exp_View_SortModeButtons_HasFocus]</visible>
-                <include content="Settings_InfoText">
-                    <param name="id">8899</param>
-                    <param name="dialog">false</param>
-                    <param name="left">500</param>
-                    <param name="bottom">80</param>
-                    <param name="override">true</param>
-                    <param name="label">$INFO[ListITem.StartTime]$INFO[ListITem.EndTime, - ,]$INFO[ListITem.Title,  •  ,]</param>
-                </include>
             </control>
             <include>View_PVR_GroupSwitcher</include>
             <control type="group">
